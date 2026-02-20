@@ -1,0 +1,12 @@
+/* 헤더 왼쪽 로고(이미지)만 아래로 */
+.header .logo a img {
+  margin-top: 15px;   /* 원하는 만큼 조절 */
+}
+
+/* Dark mode: swap header logo to pure white */
+body.dark .header .logo img,
+html[data-theme="dark"] .header .logo img {
+  content: url("/images/polar-logo.png");
+  filter: none !important;
+}
+

@@ -1,3 +1,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* Dark mode: invert header logo (so teal/black becomes light) */
+.dark .logo img,
+[data-theme="dark"] .logo img {
+  filter: invert(1) hue-rotate(180deg);
+  opacity: 0.95;
+}
+
+/* Optional: make it crisp */
+.dark .logo img { image-rendering: -webkit-optimize-contrast; }
+</style>
