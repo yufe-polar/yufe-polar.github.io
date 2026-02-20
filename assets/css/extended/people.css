@@ -7,9 +7,9 @@
 }
 
 
-/* mobile: Ho Won photo crop higher */
 @media (max-width: 768px) {
-  img[src="/images/people/howon.jpg"] {
-    object-position: 50% -20%;
+  img.people-photo.howon {
+    object-fit: cover;
+    object-position: 50% 0% !important; /* 더 올리고 싶으면  -20% 같은 것도 가능 */
   }
 }
