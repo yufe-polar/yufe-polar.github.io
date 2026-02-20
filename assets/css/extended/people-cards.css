@@ -1,0 +1,96 @@
+.people-cards{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top: 12px;
+}
+
+.person-card{
+  display:flex;
+  gap:16px;
+  padding: 16px;
+  border: 1px solid rgba(125,125,125,0.18);
+  border-radius: 16px;
+  background: rgba(125,125,125,0.02);
+  align-items:flex-start;
+}
+
+.person-photo{
+  width: 86px;
+  height: 86px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex: 0 0 auto;
+  background: rgba(125,125,125,0.08);
+}
+
+.person-body{ flex: 1; }
+
+.person-name{
+  font-size: 1.05rem;
+  font-weight: 750;
+  margin: 0;
+}
+
+.person-meta{
+  margin: 6px 0 0;
+  opacity: 0.85;
+  line-height: 1.45;
+}
+
+.person-tags{
+  margin-top: 10px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.person-tag{
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(125,125,125,0.18);
+  background: rgba(125,125,125,0.03);
+  opacity: 0.95;
+}
+
+.person-avatar{
+  width: 160px;
+  height: 210px;
+  border-radius: 18px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: rgba(125,125,125,0.04);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.person-avatar img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;      /* 안 잘리게 */
+  object-position: center !important;
+  display:block;
+  background: transparent;
+}
+
+.person-avatar{
+  background: rgba(125,125,125,0.04);
+}
+.person-initials{
+  width: 100%;
+  height: 100%;
+  display:none; /* 기본은 숨김, 이미지 실패하면 보여줌 */
+  align-items:center;
+  justify-content:center;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 1.15rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 560px){
+  .person-card{ flex-direction: column; }
+  .person-avatar{ width: 100%; height: 260px; }
+}

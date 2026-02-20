@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Project POLAR</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Project POLAR</description>
+    <image>
+      <title>Project POLAR</title>
+      <url>http://localhost:1313/images/og.png</url>
+      <link>http://localhost:1313/images/og.png</link>
+    </image>
+    <generator>Hugo -- 0.156.0</generator>
+    <language>en</language>
+    <managingEditor>ho-won.kim@sorbonne-nouvelle.fr (Project POLAR)</managingEditor>
+    <webMaster>ho-won.kim@sorbonne-nouvelle.fr (Project POLAR)</webMaster>
+    <lastBuildDate>Fri, 16 Jan 2026 10:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kick-off meeting — Paris</title>
+      <link>http://localhost:1313/events/kickoff-paris/</link>
+      <pubDate>Fri, 16 Jan 2026 10:00:00 +0100</pubDate><author>ho-won.kim@sorbonne-nouvelle.fr (Project POLAR)</author>
+      <guid>http://localhost:1313/events/kickoff-paris/</guid>
+      <description>&lt;p&gt;We held the first kick-off meeting in Paris (in person).&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Kick-off meeting photo&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/events/kickoff-paris/kickoff-paris.jpg&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ho-won.kim@sorbonne-nouvelle.fr (Project POLAR)</author>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h2 id=&#34;project-overview&#34;&gt;Project overview&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;POLAR&lt;/strong&gt; (&lt;em&gt;Polemics in Online Language and Automated Recognition&lt;/em&gt;) is a 24-month collaborative research project funded within the &lt;strong&gt;YUFE Alliance&lt;/strong&gt; and hosted at &lt;strong&gt;Université Sorbonne Nouvelle&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The project investigates how online speakers express stance and controversy through &lt;strong&gt;covert or overt discursive strategies&lt;/strong&gt; (e.g., distancing, alignment, rhetorical questions or remarks), and how such strategies can be &lt;strong&gt;identified qualitatively&lt;/strong&gt; and then &lt;strong&gt;detected automatically&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;research-aims&#34;&gt;Research aims&lt;/h2&gt;
+&lt;p&gt;POLAR has two main scientific objectives:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fabienne Baider</title>
+      <link>http://localhost:1313/people/cyprus/fabienne-baider/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ho-won.kim@sorbonne-nouvelle.fr (Project POLAR)</author>
+      <guid>http://localhost:1313/people/cyprus/fabienne-baider/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Role:&lt;/strong&gt; Co-lead (Co-PI)&lt;br&gt;
+&lt;strong&gt;Institution:&lt;/strong&gt; University of Cyprus&lt;/p&gt;
+&lt;p&gt;Emotion annotation; qualitative analysis of polarising/discriminatory online discourse (English/Greek).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Funding &amp; Partners</title>
+      <link>http://localhost:1313/partners/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ho-won.kim@sorbonne-nouvelle.fr (Project POLAR)</author>
+      <guid>http://localhost:1313/partners/</guid>
+      <description>&lt;h2 id=&#34;funding&#34;&gt;Funding&lt;/h2&gt;
+&lt;p&gt;This project is funded by the &lt;strong&gt;YUFE Alliance&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;logo-row&#34;&gt;
+  &lt;div class=&#34;logo-card&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/images/yufe-logo.jpg&#34; alt=&#34;YUFE Alliance logo&#34; /&gt;
+    &lt;div class=&#34;caption&#34;&gt;YUFE Alliance (Funder)&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;host-university&#34;&gt;Host University&lt;/h2&gt;
+&lt;p&gt;The project is hosted by &lt;strong&gt;Sorbonne Nouvelle University&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;logo-row&#34;&gt;
+  &lt;div class=&#34;logo-card&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/images/sorbonne-nouvelle-logo.jpg&#34; alt=&#34;Université Sorbonne Nouvelle logo&#34; /&gt;
+    &lt;div class=&#34;caption&#34;&gt;Université Sorbonne Nouvelle (Host)&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;partner-institutions&#34;&gt;Partner institutions&lt;/h2&gt;
+&lt;p&gt;The project is carried out by partner institutions within the &lt;strong&gt;YUFE Alliance&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;logo-grid&#34;&gt;
+  &lt;div class=&#34;logo-card&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/images/cyprus-logo.jpg&#34; alt=&#34;University of Cyprus logo&#34; /&gt;
+    &lt;div class=&#34;caption&#34;&gt;University of Cyprus&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;logo-card&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/images/antwerp-logo.jpg&#34; alt=&#34;University of Antwerp logo&#34; /&gt;
+    &lt;div class=&#34;caption&#34;&gt;University of Antwerp&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Georgeta Cislaru</title>
+      <link>http://localhost:1313/people/paris/georgeta-cislaru/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ho-won.kim@sorbonne-nouvelle.fr (Project POLAR)</author>
+      <guid>http://localhost:1313/people/paris/georgeta-cislaru/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Role:&lt;/strong&gt; Principal Investigator (PI)&lt;br&gt;
+&lt;strong&gt;Institution:&lt;/strong&gt; Université Sorbonne Nouvelle (Host)&lt;/p&gt;
+&lt;p&gt;Semantics &amp;amp; pragmatics; discourse markers; online discourse analysis.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ho Won Kim</title>
+      <link>http://localhost:1313/people/paris/ho-won-kim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ho-won.kim@sorbonne-nouvelle.fr (Project POLAR)</author>
+      <guid>http://localhost:1313/people/paris/ho-won-kim/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Role:&lt;/strong&gt; Researcher&lt;br&gt;
+&lt;strong&gt;Institution:&lt;/strong&gt; Université Sorbonne Nouvelle (Host)&lt;/p&gt;
+&lt;p&gt;Discourse analysis; functionalist lexical analysis&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Luna De Bruyne</title>
+      <link>http://localhost:1313/people/antwerp/luna-de-bruyne/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ho-won.kim@sorbonne-nouvelle.fr (Project POLAR)</author>
+      <guid>http://localhost:1313/people/antwerp/luna-de-bruyne/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Role:&lt;/strong&gt; Co-investigator&lt;br&gt;
+&lt;strong&gt;Institution:&lt;/strong&gt; University of Antwerp&lt;/p&gt;
+&lt;p&gt;Computational linguistics; automated content analysis; sentiment analysis; emotion detection.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Outputs</title>
+      <link>http://localhost:1313/outputs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ho-won.kim@sorbonne-nouvelle.fr (Project POLAR)</author>
+      <guid>http://localhost:1313/outputs/</guid>
+      <description>&lt;p&gt;Coming soon.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>People</title>
+      <link>http://localhost:1313/people-old/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ho-won.kim@sorbonne-nouvelle.fr (Project POLAR)</author>
+      <guid>http://localhost:1313/people-old/</guid>
+      <description>&lt;h2 id=&#34;core-team&#34;&gt;Core team&lt;/h2&gt;
+&lt;h3 id=&#34;université-sorbonne-nouvelle-host&#34;&gt;Université Sorbonne Nouvelle (Host)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Georgeta Cislaru&lt;/strong&gt; — Principal Investigator (PI). Expertise in semantics &amp;amp; pragmatics, discourse markers, online discourse analysis.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sandrine Reboul-Touré&lt;/strong&gt; — Lexical analysis, online discourse analysis.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ho Won Kim&lt;/strong&gt; — Discourse analysis.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;university-of-cyprus-yufe-partner&#34;&gt;University of Cyprus (YUFE partner)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Fabienne Baider&lt;/strong&gt; — Co-leader (Co-PI). Expertise in emotion annotation; qualitative analysis of polarising/discriminatory online discourse (English/Greek).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;university-of-antwerp-yufe-partner&#34;&gt;University of Antwerp (YUFE partner)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Luna De Bruyne&lt;/strong&gt; — Computational linguistics; automated content analysis; sentiment analysis and emotion detection.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Jens Lemmens&lt;/strong&gt; — Multi-label classification; computational emotion detection; social media text analysis.  &lt;a href=&#34;sediment://file_0000000040787246b28d653502209569&#34;&gt;oai_citation:15‡[POLAR] Meeting Note - 16 January (2).docx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Jens van Nooten&lt;/strong&gt; — Multi-label classification; LLM evaluation; legal QA; multimodal misinformation.  &lt;a href=&#34;sediment://file_0000000040787246b28d653502209569&#34;&gt;oai_citation:16‡[POLAR] Meeting Note - 16 January (2).docx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Sandrine Reboul-Touré</title>
+      <link>http://localhost:1313/people/paris/sandrine-reboul-toure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ho-won.kim@sorbonne-nouvelle.fr (Project POLAR)</author>
+      <guid>http://localhost:1313/people/paris/sandrine-reboul-toure/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Role:&lt;/strong&gt; Co-investigator&lt;br&gt;
+&lt;strong&gt;Institution:&lt;/strong&gt; Université Sorbonne Nouvelle (Host)&lt;/p&gt;
+&lt;p&gt;Lexical analysis; online discourse analysis.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

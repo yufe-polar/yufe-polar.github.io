@@ -1,0 +1,75 @@
+baseURL = "https://yufe-polar.github.io/"
+languageCode = "en"
+title = "Project POLAR"
+theme = "PaperMod"
+
+
+[params]
+  defaultTheme = "auto"
+  ShowReadingTime = false
+  ShowShareButtons = false
+  images = ["/images/og.png"]
+  
+  [params.author]
+    name = "Project POLAR"
+    email = "ho-won.kim@sorbonne-nouvelle.fr"
+  [params.profileMode]
+    enabled = true
+    title = "Project POLAR"
+    subtitle = """POLAR — <strong>P</strong>olemics in <strong>O</strong>nline <strong>L</strong>anguage and <strong>A</strong>utomated <strong>R</strong>ecognition. <br>YUFE-funded collaboration 2025-2027"""
+    imageUrl = "/images/polar-logo.png"
+    imageTitle = "Project POLAR"
+    imageWidth = 190
+    imageHeight = 190
+
+    [[params.profileMode.buttons]]
+      name = "About"
+      url = "/about/"
+    [[params.profileMode.buttons]]
+      name = "Events"
+      url = "/events/"
+
+    [[params.profileMode.buttons]]
+      name = "Funding & Partners"
+      url = "/partners/"
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:ho-won.kim@sorbonne-nouvelle.fr"
+  [params.label]
+    text = "Project POLAR"
+    icon = "/images/polar-logo-transparent.png"
+    iconHeight = 56
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Events"
+    url = "/events/"
+    weight = 2
+
+  [[menu.main]]
+    name = "People"
+    url = "/people/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Outputs"
+    url = "/outputs/"
+    weight = 4
+
+  [[menu.main]]
+    name = "Partners"
+    url = "/partners/"
+    weight = 5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+disableKinds = ["RSS"]
