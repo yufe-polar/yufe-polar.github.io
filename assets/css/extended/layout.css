@@ -6,3 +6,21 @@
 .page-header {
   margin-bottom: 18px;
 }
+
+/* Sticky header: keep top bar visible while scrolling */
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  background: color-mix(in srgb, var(--theme) 75%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+/* Prevent content from hiding behind sticky header */
+.main {
+  padding-top: 12px;
+}

@@ -1,0 +1,90 @@
+{{ define "main" }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="post-content">{{ . }}</div>{{ end }}
+</header>
+
+{{ $all := .Pages.ByDate.Reverse }}
+{{ $workshops := where $all "Params.event_type" "eq" "Workshop" }}
+{{ $seminars := where $all "Params.event_type" "eq" "Seminar" }}
+{{ $confs := where $all "Params.event_type" "eq" "Conference" }}
+
+<nav class="event-jumplinks">
+  <a href="#workshops">Workshops ({{ len $workshops }})</a>
+  ·
+  <a href="#seminars">Seminars ({{ len $seminars }})</a>
+  ·
+  <a href="#conference">Conference ({{ len $confs }})</a>
+</nav>
+
+<section id="workshops" class="events-section">
+  <h2>Workshops</h2>
+  {{ template "eventRows" (dict "pages" $workshops "empty" "Workshops will be announced soon.") }}
+</section>
+
+<section id="seminars" class="events-section">
+  <h2>Seminars</h2>
+  {{ template "eventRows" (dict "pages" $seminars "empty" "Seminars are being scheduled. The first session is planned for May 2026 (details TBA).") }}
+</section>
+
+<section id="conference" class="events-section">
+  <h2>Conference</h2>
+  {{ template "eventRows" (dict "pages" $confs "empty" "The final conference is planned for autumn 2027 (details TBA).") }}
+</section>
+
+{{ end }}
+
+{{ define "eventRows" }}
+{{ $pages := .pages }}
+{{ $empty := .empty }}
+
+{{ if gt (len $pages) 0 }}
+  <div class="events-rows">
+    {{ range $pages }}
+      {{ $p := . }}
+
+      <article class="event-row">
+        <a class="event-row-link" href="{{ $p.RelPermalink }}" aria-label="Open: {{ $p.Title }}"></a>
+
+        <!-- LEFT: text -->
+        <div class="event-left">
+          <div class="event-datetime">
+            <span class="event-date">{{ $p.Date.Format "January 2, 2006" }}</span>
+            <span class="event-sep">|</span>
+            <span class="event-time">
+              {{ $p.Date.Format "15:04" }}{{ with $p.Params.end }} - {{ (time .).Format "15:04" }}{{ end }}
+            </span>
+            {{ with $p.Params.location }}
+              <span class="event-sep">·</span>
+              <span class="event-location-inline">{{ . }}</span>
+            {{ end }}
+          </div>
+
+          <h3 class="event-title">
+            <a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+          </h3>
+
+          {{ with $p.Params.summary }}
+            <div class="event-summary">{{ . }}</div>
+          {{ end }}
+        </div>
+
+        <!-- RIGHT: image (optional) -->
+        <div class="event-right">
+          {{ with $p.Params.cover.image }}
+            <a class="event-thumb" href="{{ $p.RelPermalink }}">
+              <img
+                src="{{ $p.RelPermalink }}{{ . }}"
+                alt="{{ $p.Params.cover.alt | default $p.Title }}"
+                loading="lazy" />
+            </a>
+          {{ end }}
+        </div>
+      </article>
+
+    {{ end }}
+  </div>
+{{ else }}
+  <p class="events-empty">{{ $empty }}</p>
+{{ end }}
+{{ end }}

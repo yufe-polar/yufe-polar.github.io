@@ -1,0 +1,114 @@
+.event-jumplinks{
+  margin: 14px 0 22px;
+  opacity: .9;
+}
+
+.events-section h2{
+  margin-bottom: 18px; /* 지금보다 크게: 14~24px 취향 */
+}
+.events-section{ margin-top: 34px; }
+.events-rows{
+  display: grid;
+  gap: 18px;
+}
+
+/* Desktop row layout */
+
+.event-row{
+  position: relative;
+}
+
+.event-row-link{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* 카드 안의 실제 링크/버튼은 클릭 가능하게 위로 올리기 */
+.event-row .event-title a,
+.event-row .event-thumb{
+  position: relative;
+  z-index: 2;
+}
+
+.event-row{
+  display: grid;
+  grid-template-columns: 1.6fr 0.9fr;
+  gap: 18px;
+  padding: 14px 16px;
+
+  /* 구분감 강화 */
+  background: color-mix(in srgb, var(--theme) 92%, var(--tertiary) 8%);
+  border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
+  border-radius: 14px;
+
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
+
+.dark .event-row{
+  background: color-mix(in srgb, var(--theme) 85%, white 2%);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
+
+.event-datetime{
+  opacity: .85;
+  font-size: .95rem;
+  margin-bottom: 6px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.event-title{
+  margin: 0 0 6px 0;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+.event-title a{ text-decoration: none; }
+.event-title a:hover{ text-decoration: underline; }
+
+.event-location{
+  opacity: .85;
+  margin-bottom: 10px;
+}
+
+.event-summary{
+  opacity: .9;
+  line-height: 1.6;
+}
+
+/* Right image */
+.event-thumb{
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+}
+
+.event-thumb img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: 50% 25%;
+  display: block;
+}
+
+/* Mobile: image on top, then datetime/title/location; hide summary for compactness */
+@media (max-width: 768px){
+  .event-row{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .event-right{ order: -1; } /* image first */
+
+  .event-thumb img{
+    height: 200px;
+  }
+
+  .event-summary{
+    display: none;
+  }
+}
+
+

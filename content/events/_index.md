@@ -2,4 +2,4 @@
 title: "Events"
 ---
 
-Seminars and updates from Project POLAR.
+Workshops, seminars, and conference activities from the POLAR Project.

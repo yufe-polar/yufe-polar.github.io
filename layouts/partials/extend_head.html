@@ -13,3 +13,7 @@
 /* Optional: make it crisp */
 .dark .logo img { image-rendering: -webkit-optimize-contrast; }
 </style>
+
+
+{{- $ev := resources.Get "css/extended/events.css" | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $ev.RelPermalink }}">

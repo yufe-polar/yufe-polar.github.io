@@ -1,6 +1,6 @@
 baseURL = "https://yufe-polar.github.io/"
 languageCode = "en"
-title = "Project POLAR"
+title = "POLAR Project"
 theme = "PaperMod"
 
 
@@ -11,14 +11,14 @@ theme = "PaperMod"
   images = ["/images/og.png"]
   
   [params.author]
-    name = "Project POLAR"
+    name = "POLAR Project"
     email = "ho-won.kim@sorbonne-nouvelle.fr"
   [params.profileMode]
     enabled = true
-    title = "Project POLAR"
-    subtitle = """POLAR — <strong>P</strong>olemics in <strong>O</strong>nline <strong>L</strong>anguage and <strong>A</strong>utomated <strong>R</strong>ecognition. <br>YUFE-funded collaboration 2025-2027"""
+    title = "POLAR Project"
+    subtitle = """<strong>P</strong>olemics in <strong>O</strong>nline <strong>L</strong>anguage and <strong>A</strong>utomated <strong>R</strong>ecognition. <br>YUFE-funded collaboration 2025-2027"""
     imageUrl = "/images/polar-logo.png"
-    imageTitle = "Project POLAR"
+    imageTitle = "POLAR Project"
     imageWidth = 190
     imageHeight = 190
 
@@ -37,7 +37,7 @@ theme = "PaperMod"
     name = "email"
     url = "mailto:ho-won.kim@sorbonne-nouvelle.fr"
   [params.label]
-    text = "Project POLAR"
+    text = "POLAR Project"
     icon = "/images/polar-logo-transparent.png"
     iconHeight = 56
 
