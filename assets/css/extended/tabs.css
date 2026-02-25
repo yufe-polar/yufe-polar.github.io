@@ -16,7 +16,8 @@
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 0.95rem;
-  color: var(--polar-teal, #1a5f5a);
+  color: #1a5f5a;
+  color: var(--polar-teal);
   transition: background 0.15s ease, border-color 0.15s ease;
 }
 
@@ -29,7 +30,8 @@
   background: rgba(26, 95, 90, 0.12);
   border-color: rgba(26, 95, 90, 0.5);
   font-weight: 700;
-  color: var(--polar-teal, #1a5f5a);
+  color: #1a5f5a;
+  color: var(--polar-teal);
 }
 
 .tab-panel {
@@ -49,19 +51,47 @@
   padding-left: 18px;
 }
 
-/* Dark mode */
+/* Dark mode — class based (PaperMod) + iOS system */
+.dark .tab-btn,
+html[data-theme="dark"] .tab-btn,
 @media (prefers-color-scheme: dark) {
   .tab-btn {
-    border-color: rgba(26, 95, 90, 0.4);
+    border-color: rgba(107, 191, 184, 0.3);
+    color: #6bbfb8;
+  }
+}
+
+.dark .tab-btn,
+html[data-theme="dark"] .tab-btn {
+  border-color: rgba(107, 191, 184, 0.3);
+  color: #6bbfb8;
+}
+
+.dark .tab-btn.is-active,
+html[data-theme="dark"] .tab-btn.is-active {
+  background: rgba(107, 191, 184, 0.15);
+  border-color: rgba(107, 191, 184, 0.5);
+  color: #8dd4ce;
+}
+
+.dark .tab-panel,
+html[data-theme="dark"] .tab-panel {
+  border-color: rgba(107, 191, 184, 0.15);
+  background: rgba(107, 191, 184, 0.03);
+}
+
+@media (prefers-color-scheme: dark) {
+  .tab-btn {
+    border-color: rgba(107, 191, 184, 0.3);
     color: #6bbfb8;
   }
   .tab-btn.is-active {
-    background: rgba(26, 95, 90, 0.25);
-    border-color: rgba(26, 95, 90, 0.6);
+    background: rgba(107, 191, 184, 0.15);
+    border-color: rgba(107, 191, 184, 0.5);
     color: #8dd4ce;
   }
   .tab-panel {
-    border-color: rgba(26, 95, 90, 0.25);
-    background: rgba(26, 95, 90, 0.05);
+    border-color: rgba(107, 191, 184, 0.15);
+    background: rgba(107, 191, 184, 0.03);
   }
 }
