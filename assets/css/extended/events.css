@@ -1,114 +1,151 @@
-.event-jumplinks{
-  margin: 14px 0 22px;
-  opacity: .9;
+.event-jumplinks {
+  padding-bottom: 12px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  font-size: 0.9rem;
 }
 
-.events-section h2{
-  margin-bottom: 18px; /* 지금보다 크게: 14~24px 취향 */
+.event-jumplinks a {
+  color: #1a5f5a;
+  text-decoration: none;
+  font-weight: 500;
 }
-.events-section{ margin-top: 34px; }
-.events-rows{
+
+.event-jumplinks a:hover {
+  text-decoration: underline;
+}
+
+.events-section {
+  margin-top: 34px;
+}
+
+.events-section h2 {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 1.4rem !important;
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #1a5f5a;
+}
+
+.dark .events-section h2 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.events-rows {
   display: grid;
   gap: 18px;
 }
 
-/* Desktop row layout */
-
-.event-row{
+/* ── Event card ── */
+.event-row {
   position: relative;
+  display: grid;
+  grid-template-columns: 1.6fr 0.9fr;
+  gap: 18px;
+  padding: 18px 20px;
+  background: #faf7f2;
+  border: 1px solid #e0d9cd;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-.event-row-link{
+.event-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 95, 90, 0.08);
+}
+
+.dark .event-row {
+  background: color-mix(in srgb, var(--theme) 85%, white 2%);
+}
+
+.event-row-link {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-/* 카드 안의 실제 링크/버튼은 클릭 가능하게 위로 올리기 */
 .event-row .event-title a,
-.event-row .event-thumb{
+.event-row .event-thumb {
   position: relative;
   z-index: 2;
 }
 
-.event-row{
-  display: grid;
-  grid-template-columns: 1.6fr 0.9fr;
-  gap: 18px;
-  padding: 14px 16px;
-
-  /* 구분감 강화 */
-  background: color-mix(in srgb, var(--theme) 92%, var(--tertiary) 8%);
-  border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
-  border-radius: 14px;
-
-  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
-}
-
-.dark .event-row{
-  background: color-mix(in srgb, var(--theme) 85%, white 2%);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.25);
-}
-
-.event-datetime{
-  opacity: .85;
-  font-size: .95rem;
-  margin-bottom: 6px;
+/* ── Datetime ── */
+.event-datetime {
+  font-size: 0.82rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: #8a9e9c;
+  margin-bottom: 8px;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
-.event-title{
-  margin: 0 0 6px 0;
-  font-size: 1.2rem;
-  line-height: 1.25;
-}
-.event-title a{ text-decoration: none; }
-.event-title a:hover{ text-decoration: underline; }
-
-.event-location{
-  opacity: .85;
-  margin-bottom: 10px;
+/* ── Title ── */
+.event-title {
+  margin: 0 0 8px 0;
+  font-size: 1.05rem !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1a5f5a;
 }
 
-.event-summary{
-  opacity: .9;
+.event-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Summary ── */
+.event-summary {
+  font-size: 0.92rem;
   line-height: 1.6;
+  color: #3a3a3a;
 }
 
-/* Right image */
-.event-thumb{
+/* ── Empty state ── */
+.events-empty {
+  font-size: 0.92rem;
+  color: #8a9e9c;
+  font-style: italic;
+  padding: 12px 0;
+}
+
+/* ── Right image ── */
+.event-thumb {
   display: block;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
 }
 
-.event-thumb img{
+.event-thumb img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
   object-position: 50% 25%;
   display: block;
 }
 
-/* Mobile: image on top, then datetime/title/location; hide summary for compactness */
-@media (max-width: 768px){
-  .event-row{
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .event-row {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
-  .event-right{ order: -1; } /* image first */
+  .event-right { order: -1; }
 
-  .event-thumb img{
-    height: 200px;
+  .event-thumb img {
+    height: 180px;
   }
 
-  .event-summary{
+  .event-summary {
     display: none;
   }
 }
-
-

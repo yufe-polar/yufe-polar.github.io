@@ -1,34 +1,112 @@
-/* Make typography feel more "product/academic" than "blog" */
+/* ── Google Fonts: DM Sans ── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap');
+
+/* ── Brand color variables ── */
 :root {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, "Apple SD Gothic Neo", "Noto Sans KR", "Noto Sans", sans-serif;
+  --polar-teal:       #1a5f5a;
+  --polar-teal-light: #2a7f78;
+  --polar-cream:      #f5f0e8;
+  --polar-muted:      #8a9e9c;
+
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
+/* ── Base typography ── */
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-sans) !important;
+  font-size: 16px !important;
   letter-spacing: -0.01em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #2d2d2d;
+  line-height: 1.7 !important;
+  background: #f5f0e8 !important;
 }
 
-/* Reduce the "chunky" feel of big headings */
-h1, h2, h3 {
+/* PaperMod uses --theme for background — override too */
+:root {
+  --theme: #f5f0e8 !important;
+  --entry: #faf7f2 !important;
+  --border: #e0d9cd !important;
+}
+
+/* ── Body text: softer than pure black ── */
+p, li, td, th, blockquote {
+  color: #3a3a3a;
+}
+
+/* ── Headings: teal-tinted dark ── */
+h1, h2, h3, h4,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4 {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
+  color: #1a5f5a;
 }
 
-/* Make paragraphs more readable */
+.post-content h1, .page-content h1, .page-header h1 { font-size: 2rem !important; }
+.post-content h2, .page-content h2 { font-size: 1.4rem !important; }
+.post-content h3, .page-content h3 { font-size: 1.1rem !important; }
+.post-content h4, .page-content h4 { font-size: 1rem !important; }
+
+/* Dark mode: lighten text back up */
+.dark body,
+html[data-theme="dark"] body {
+  color: #e8e4dd;
+}
+
+.dark p, .dark li,
+html[data-theme="dark"] p,
+html[data-theme="dark"] li {
+  color: #d4cfc8;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4 {
+  color: #6bbfb8;
+}
+
+/* ── Links: teal ── */
+a {
+  color: var(--polar-teal);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.08em;
+}
+
+a:hover {
+  color: var(--polar-teal-light);
+}
+
+/* ── Readable body text ── */
 p, li {
   line-height: 1.65;
 }
 
-/* Slightly soften huge section spacing on pages */
 .post-content h2 {
   margin-top: 1.4em;
 }
 
-/* ProfileMode: tighten spacing + make subtitle nicer */.profile .profile_inner h1 {
+/* ── Page content width ── */
+.post-content,
+.page-content,
+.profile .profile_inner {
+  max-width: 78ch;
+}
+
+/* ── Profile mode ── */
+.profile .profile_inner h1 {
   font-weight: 750;
 }
 
@@ -36,14 +114,6 @@ p, li {
   line-height: 1.5;
   opacity: 0.85;
   max-width: 52ch;
-}
-
-
-/* Keep text lines comfortably readable */
-.post-content,
-.page-content,
-.profile .profile_inner {
-  max-width: 78ch;
 }
 
 .page-header {
@@ -54,7 +124,84 @@ p, li {
   padding-top: 28px;
 }
 
-a {
-  text-underline-offset: 0.18em;
-  text-decoration-thickness: 0.08em;
+/* ── Nav menu links ── */
+.nav a,
+.menu a {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.nav a:hover,
+.menu a:hover {
+  color: var(--polar-teal);
+}
+
+/* Active page link — keep bold, just change color */
+.nav a.active,
+.menu a.active {
+  color: #1a5f5a !important;
+  font-weight: 700 !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Active nav highlight */
+#menu .active,
+#menu a.active{
+  font-weight: 800 !important;
+  color: var(--polar-teal) !important;
+  border-bottom: none !important;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(26,95,90,0.10);
+}
+
+/* ── Header logo text ── */
+.logo a {
+  font-weight: 700 !important;
+  font-size: 1.6rem !important;
+  letter-spacing: -0.01em;
+  color: #1a5f5a !important;
+}
+
+/* ── Override PaperMod specific selectors ── */
+.post-title {
+  font-size: 2rem !important;
+  font-family: 'DM Sans', sans-serif !important;
+  color: #1a5f5a !important;
+}
+
+/* PaperMod uses .post-content { color: var(--content) } — override directly */
+.post-content {
+  color: #3a3a3a !important;
+}
+
+.post-content strong {
+  color: #1a5f5a !important;
+}
+.post-content p,
+.post-content li,
+.post-content td,
+.page-content p,
+.page-content li,
+body .post-content p,
+body .post-content li {
+  color: #3a3a3a !important;
+}
+
+.post-content strong,
+.page-content strong {
+  color: #1a5f5a !important;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4 {
+  color: #1a5f5a !important;
 }

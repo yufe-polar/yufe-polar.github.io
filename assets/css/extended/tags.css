@@ -1,8 +1,24 @@
-/* assets/css/extended/tags.css */
 .person-tag {
-  border: 1px solid rgba(0,0,0,.10);
-  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
   font-weight: 500;
-  padding: 6px 10px;
+  padding: 5px 12px;
   border-radius: 999px;
+  border: 1px solid rgba(26, 95, 90, 0.25);
+  background: rgba(26, 95, 90, 0.05);
+  color: var(--polar-teal, #1a5f5a);
+  transition: background 0.15s ease;
+}
+
+.person-tag:hover {
+  background: rgba(26, 95, 90, 0.1);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .person-tag {
+    border-color: rgba(26, 95, 90, 0.45);
+    background: rgba(26, 95, 90, 0.12);
+    color: #8dd4ce;
+  }
 }

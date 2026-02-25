@@ -14,7 +14,7 @@ theme = "PaperMod"
     name = "POLAR Project"
     email = "ho-won.kim@sorbonne-nouvelle.fr"
   [params.profileMode]
-    enabled = true
+    enabled = false
     title = "POLAR Project"
     subtitle = """<strong>P</strong>olemics in <strong>O</strong>nline <strong>L</strong>anguage and <strong>A</strong>utomated <strong>R</strong>ecognition. <br>YUFE-funded collaboration 2025-2027"""
     imageUrl = "/images/polar-logo.png"
