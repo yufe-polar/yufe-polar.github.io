@@ -119,11 +119,13 @@ The project investigates how online speakers express stance and controversy thro
   }
 
   .aim-title {
-    margin: 0 0 8px;
-    font-size: 1rem;
     font-weight: 700;
+    font-size: 0.9rem;
     font-family: 'DM Sans', sans-serif !important;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     color: #1a5f5a;
+    margin-bottom: 10px;
   }
 
   .aim-body p {
