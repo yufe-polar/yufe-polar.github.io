@@ -6,7 +6,8 @@
   border-radius: 999px;
   border: 1px solid rgba(26, 95, 90, 0.25);
   background: rgba(26, 95, 90, 0.05);
-  color: var(--polar-teal, #1a5f5a);
+  color: #1a5f5a;
+  color: var(--polar-teal);
   transition: background 0.15s ease;
 }
 
@@ -14,11 +15,10 @@
   background: rgba(26, 95, 90, 0.1);
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .person-tag {
-    border-color: rgba(26, 95, 90, 0.45);
-    background: rgba(26, 95, 90, 0.12);
-    color: #8dd4ce;
-  }
+/* Dark mode — class based only */
+.dark .person-tag,
+html[data-theme="dark"] .person-tag {
+  border-color: rgba(107, 191, 184, 0.3);
+  background: rgba(107, 191, 184, 0.08);
+  color: #8dd4ce;
 }
