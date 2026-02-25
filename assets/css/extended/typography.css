@@ -1,56 +1,109 @@
 /* ── Google Fonts: DM Sans ── */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap');
 
-/* ── Brand color variables ── */
+/* ══════════════════════════════
+   LIGHT MODE variables
+══════════════════════════════ */
 :root {
   --polar-teal:       #1a5f5a;
   --polar-teal-light: #2a7f78;
   --polar-cream:      #f5f0e8;
+  --polar-card:       #faf7f2;
+  --polar-border:     #e0d9cd;
+  --polar-text:       #2d2d2d;
+  --polar-text-soft:  #3a3a3a;
   --polar-muted:      #8a9e9c;
 
   --font-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* PaperMod overrides — light */
+  --theme:   #f5f0e8;
+  --entry:   #faf7f2;
+  --border:  #e0d9cd;
+  --primary: #2d2d2d;
+  --content: #3a3a3a;
 }
 
-/* ── Base typography ── */
+/* ══════════════════════════════
+   DARK MODE variables
+══════════════════════════════ */
+.dark,
+html[data-theme="dark"] {
+  --polar-teal:       #6bbfb8;
+  --polar-teal-light: #8dd4ce;
+  --polar-cream:      #1a1f1e;
+  --polar-card:       #1f2726;
+  --polar-border:     #2a3533;
+  --polar-text:       #e8e4dd;
+  --polar-text-soft:  #d4cfc8;
+  --polar-muted:      #7a9e9a;
+
+  /* PaperMod overrides — dark */
+  --theme:   #1a1f1e;
+  --entry:   #1f2726;
+  --border:  #2a3533;
+  --primary: #e8e4dd;
+  --content: #d4cfc8;
+}
+
+/* ══════════════════════════════
+   BASE
+══════════════════════════════ */
 body {
   font-family: var(--font-sans) !important;
   font-size: 16px !important;
+  line-height: 1.7 !important;
   letter-spacing: -0.01em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2d2d2d;
-  line-height: 1.7 !important;
-  background: #f5f0e8 !important;
+  background: var(--polar-cream) !important;
+  color: var(--polar-text) !important;
 }
 
-/* PaperMod uses --theme for background — override too */
-:root {
-  --theme: #f5f0e8 !important;
-  --entry: #faf7f2 !important;
-  --border: #e0d9cd !important;
+.dark body,
+html[data-theme="dark"] body,
+.dark,
+html[data-theme="dark"] {
+  background: var(--polar-cream) !important;
+  color: var(--polar-text) !important;
 }
 
-/* ── Body text: softer than pure black ── */
-p, li, td, th, blockquote {
-  color: #3a3a3a;
+.dark p, .dark li, .dark td,
+html[data-theme="dark"] p,
+html[data-theme="dark"] li,
+html[data-theme="dark"] td {
+  color: var(--polar-text-soft) !important;
 }
 
-/* ── Headings: teal-tinted dark ── */
+.dark .post-content,
+.dark .page-content,
+html[data-theme="dark"] .post-content,
+html[data-theme="dark"] .page-content {
+  color: var(--polar-text-soft) !important;
+}
+
+.dark .post-content p,
+.dark .post-content li,
+.dark .page-content p,
+.dark .page-content li,
+html[data-theme="dark"] .post-content p,
+html[data-theme="dark"] .post-content li,
+html[data-theme="dark"] .page-content p,
+html[data-theme="dark"] .page-content li {
+  color: var(--polar-text-soft) !important;
+}
+
+/* ══════════════════════════════
+   HEADINGS
+══════════════════════════════ */
 h1, h2, h3, h4,
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4,
-.page-content h1,
-.page-content h2,
-.page-content h3,
-.page-content h4 {
+.post-content h1, .post-content h2, .post-content h3, .post-content h4,
+.page-content h1, .page-content h2, .page-content h3, .page-content h4 {
   font-family: 'DM Sans', sans-serif !important;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
-  color: #1a5f5a;
+  color: var(--polar-teal) !important;
 }
 
 .post-content h1, .page-content h1, .page-header h1 { font-size: 2rem !important; }
@@ -58,77 +111,96 @@ h1, h2, h3, h4,
 .post-content h3, .page-content h3 { font-size: 1.1rem !important; }
 .post-content h4, .page-content h4 { font-size: 1rem !important; }
 
-/* Dark mode: lighten text back up */
-.dark body,
-html[data-theme="dark"] body {
-  color: #e8e4dd;
+/* ══════════════════════════════
+   BODY TEXT
+══════════════════════════════ */
+p, li, td, th, blockquote { line-height: 1.65; }
+
+.post-content,
+.page-content {
+  color: var(--polar-text-soft) !important;
+  max-width: 78ch;
 }
 
-.dark p, .dark li,
-html[data-theme="dark"] p,
-html[data-theme="dark"] li {
-  color: #d4cfc8;
+.post-content p,
+.post-content li,
+.post-content td,
+.page-content p,
+.page-content li {
+  color: var(--polar-text-soft) !important;
 }
 
-.dark h1, .dark h2, .dark h3, .dark h4,
-html[data-theme="dark"] h1,
-html[data-theme="dark"] h2,
-html[data-theme="dark"] h3,
-html[data-theme="dark"] h4 {
-  color: #6bbfb8;
+.post-content strong,
+.page-content strong {
+  color: var(--polar-teal) !important;
 }
 
-/* ── Links: teal ── */
+/* ── Dark mode: about.md inline cards ── */
+.dark .aim-card,
+.dark .method-card,
+.dark .timeline-item,
+html[data-theme="dark"] .aim-card,
+html[data-theme="dark"] .method-card,
+html[data-theme="dark"] .timeline-item {
+  background: var(--polar-card) !important;
+  border-color: rgba(107, 191, 184, 0.2) !important;
+}
+
+.dark .aim-body p,
+.dark .method-card p,
+.dark .timeline-desc,
+html[data-theme="dark"] .aim-body p,
+html[data-theme="dark"] .method-card p,
+html[data-theme="dark"] .timeline-desc {
+  color: #d4cfc8 !important;
+}
+
+/* ══════════════════════════════
+   LINKS
+══════════════════════════════ */
 a {
   color: var(--polar-teal);
   text-underline-offset: 0.18em;
   text-decoration-thickness: 0.08em;
 }
 
-a:hover {
-  color: var(--polar-teal-light);
+a:hover { color: var(--polar-teal-light); }
+
+/* ══════════════════════════════
+   NAV / HEADER
+══════════════════════════════ */
+/* ── Header logo text only ── */
+header .logo a,
+.header .logo a,
+#top-link,
+.logo a {
+  font-weight: 700 !important;
+  font-size: 1.6rem !important;
+  letter-spacing: -0.01em;
+  color: var(--polar-teal) !important;
+  text-decoration: none !important;
 }
 
-/* ── Readable body text ── */
-p, li {
-  line-height: 1.65;
+/* ── Active nav: pill style (모든 페이지 통일) ── */
+#menu .active,
+#menu a.active,
+.nav a.active,
+.menu a.active {
+  font-weight: 800 !important;
+  color: var(--polar-teal) !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(26, 95, 90, 0.1);
 }
 
-.post-content h2 {
-  margin-top: 1.4em;
-}
-
-/* ── Page content width ── */
-.post-content,
-.page-content,
-.profile .profile_inner {
-  max-width: 78ch;
-}
-
-/* ── Profile mode ── */
-.profile .profile_inner h1 {
-  font-weight: 750;
-}
-
-.profile .profile_inner .subtitle {
-  line-height: 1.5;
-  opacity: 0.85;
-  max-width: 52ch;
-}
-
-.page-header {
-  margin-bottom: 18px;
-}
-
-.main {
-  padding-top: 28px;
-}
-
-/* ── Nav menu links ── */
 .nav a,
-.menu a {
+.menu a,
+.nav a.active,
+.menu a.active {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
   letter-spacing: 0.02em;
 }
 
@@ -137,71 +209,33 @@ p, li {
   color: var(--polar-teal);
 }
 
-/* Active page link — keep bold, just change color */
 .nav a.active,
 .menu a.active {
-  color: #1a5f5a !important;
-  font-weight: 700 !important;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-/* Active nav highlight */
-#menu .active,
-#menu a.active{
-  font-weight: 800 !important;
   color: var(--polar-teal) !important;
-  border-bottom: none !important;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(26,95,90,0.10);
-}
-
-/* ── Header logo text ── */
-.logo a {
   font-weight: 700 !important;
-  font-size: 1.6rem !important;
-  letter-spacing: -0.01em;
-  color: #1a5f5a !important;
 }
 
-/* ── Override PaperMod specific selectors ── */
+/* ══════════════════════════════
+   POST TITLE
+══════════════════════════════ */
 .post-title {
   font-size: 2rem !important;
   font-family: 'DM Sans', sans-serif !important;
-  color: #1a5f5a !important;
+  color: var(--polar-teal) !important;
 }
 
-/* PaperMod uses .post-content { color: var(--content) } — override directly */
-.post-content {
-  color: #3a3a3a !important;
-}
+/* ══════════════════════════════
+   MISC
+══════════════════════════════ */
+.post-content h2 { margin-top: 1.4em; }
 
-.post-content strong {
-  color: #1a5f5a !important;
+.profile .profile_inner h1 { font-weight: 750; }
+.profile .profile_inner .subtitle {
+  line-height: 1.5;
+  opacity: 0.85;
+  max-width: 52ch;
 }
-.post-content p,
-.post-content li,
-.post-content td,
-.page-content p,
-.page-content li,
-body .post-content p,
-body .post-content li {
-  color: #3a3a3a !important;
-}
+.profile .profile_inner { max-width: 78ch; }
 
-.post-content strong,
-.page-content strong {
-  color: #1a5f5a !important;
-}
-
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4,
-.page-content h1,
-.page-content h2,
-.page-content h3,
-.page-content h4 {
-  color: #1a5f5a !important;
-}
+.page-header { margin-bottom: 18px; }
+.main { padding-top: 28px; }

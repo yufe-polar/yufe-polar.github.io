@@ -24,3 +24,28 @@
 .main {
   padding-top: 12px;
 }
+
+
+
+/* 1) Make the whole page use the cream background */
+html, body {
+  background: var(--theme) !important;
+}
+
+/* 2) Don't paint the main container as a "box" */
+.main,
+.profile,
+.profile_inner,
+.post,
+.page,
+.post-content {
+  background: transparent !important;
+}
+
+/* 3) Only cards/entries use the lighter surface color */
+.entry,
+.first-entry,
+.post-entry {
+  background: var(--entry) !important;
+  border-color: var(--border) !important;
+}

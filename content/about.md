@@ -82,11 +82,11 @@ The project investigates how online speakers express stance and controversy thro
     font-size: 1.05rem;
     line-height: 1.7;
     max-width: 72ch;
-    color: #3a3a3a !important;
+    color: var(--polar-text-soft) !important;
   }
 
   .about-intro strong {
-    color: #1a5f5a !important;
+    color: var(--polar-teal) !important;
   }
 
   /* ── Research aims ── */
@@ -104,9 +104,9 @@ The project investigates how online speakers express stance and controversy thro
     gap: 16px;
     align-items: flex-start;
     padding: 20px 22px;
-    border: 1px solid rgba(26, 95, 90, 0.12);
+    border: 1px solid var(--polar-border);
     border-radius: 16px;
-    background: #faf7f2;
+    background: var(--polar-card);
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     min-width: 0;
   }
@@ -119,20 +119,18 @@ The project investigates how online speakers express stance and controversy thro
   }
 
   .aim-title {
+    margin: 0 0 8px;
+    font-size: 1rem;
     font-weight: 700;
-    font-size: 0.9rem;
     font-family: 'DM Sans', sans-serif !important;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #1a5f5a;
-    margin-bottom: 10px;
+    color: var(--polar-teal);
   }
 
   .aim-body p {
     margin: 0;
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #3a3a3a !important;
+    color: var(--polar-text-soft) !important;
   }
 
   /* ── Method ── */
@@ -146,9 +144,9 @@ The project investigates how online speakers express stance and controversy thro
 
   .method-card {
     padding: 20px 22px;
-    border: 1px solid rgba(26, 95, 90, 0.12);
+    border: 1px solid var(--polar-border);
     border-radius: 16px;
-    background: #faf7f2;
+    background: var(--polar-card);
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
 
@@ -158,7 +156,7 @@ The project investigates how online speakers express stance and controversy thro
     font-family: 'DM Sans', sans-serif !important;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #1a5f5a;
+    color: var(--polar-teal);
     margin-bottom: 10px;
   }
 
@@ -166,7 +164,7 @@ The project investigates how online speakers express stance and controversy thro
     margin: 0;
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #3a3a3a !important;
+    color: var(--polar-text-soft) !important;
   }
 
   .method-divider {
@@ -201,7 +199,7 @@ The project investigates how online speakers express stance and controversy thro
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #1a5f5a;
+    background: var(--polar-teal);
     flex-shrink: 0;
   }
 
@@ -216,7 +214,7 @@ The project investigates how online speakers express stance and controversy thro
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #1a5f5a;
+    color: var(--polar-teal);
     opacity: 0.7;
   }
 
@@ -224,11 +222,11 @@ The project investigates how online speakers express stance and controversy thro
     margin: 0;
     font-size: 0.97rem;
     line-height: 1.55;
-    color: #3a3a3a !important;
+    color: var(--polar-text-soft) !important;
   }
 
   .timeline-content strong {
-    color: #1a5f5a !important;
+    color: var(--polar-teal) !important;
   }
 
   /* ── Mobile ── */
