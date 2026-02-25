@@ -51,16 +51,7 @@
   padding-left: 18px;
 }
 
-/* Dark mode — class based (PaperMod) + iOS system */
-.dark .tab-btn,
-html[data-theme="dark"] .tab-btn,
-@media (prefers-color-scheme: dark) {
-  .tab-btn {
-    border-color: rgba(107, 191, 184, 0.3);
-    color: #6bbfb8;
-  }
-}
-
+/* Dark mode — class based only (PaperMod 방식) */
 .dark .tab-btn,
 html[data-theme="dark"] .tab-btn {
   border-color: rgba(107, 191, 184, 0.3);
@@ -78,20 +69,4 @@ html[data-theme="dark"] .tab-btn.is-active {
 html[data-theme="dark"] .tab-panel {
   border-color: rgba(107, 191, 184, 0.15);
   background: rgba(107, 191, 184, 0.03);
-}
-
-@media (prefers-color-scheme: dark) {
-  .tab-btn {
-    border-color: rgba(107, 191, 184, 0.3);
-    color: #6bbfb8;
-  }
-  .tab-btn.is-active {
-    background: rgba(107, 191, 184, 0.15);
-    border-color: rgba(107, 191, 184, 0.5);
-    color: #8dd4ce;
-  }
-  .tab-panel {
-    border-color: rgba(107, 191, 184, 0.15);
-    background: rgba(107, 191, 184, 0.03);
-  }
 }
