@@ -29,7 +29,7 @@
 /* ── Photo ── */
 .person-avatar {
   width: 100%;
-  height: 220px;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background: rgba(26, 95, 90, 0.06);
   display: flex;
@@ -105,7 +105,8 @@
   }
 
   .person-avatar {
-    height: 260px;
+    aspect-ratio: 1 / 1;
+    height: auto;
   }
 }
 
