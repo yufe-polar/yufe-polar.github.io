@@ -122,6 +122,17 @@ p, li, td, th, blockquote { line-height: 1.65; }
   max-width: 78ch;
 }
 
+/* People 페이지 전용 — tabs 컨테이너 넓게 */
+.page-content:has(.tabs),
+.post-content:has(.tabs) {
+  max-width: 960px !important;
+}
+
+/* PaperMod main-width 오버라이드 */
+:root {
+  --main-width: 960px;
+}
+
 .post-content p,
 .post-content li,
 .post-content td,

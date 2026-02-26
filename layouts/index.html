@@ -65,8 +65,9 @@
   .right-side {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    flex-shrink: 0;
+    gap: 28px;
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   /* ══════════════════════════════
@@ -122,7 +123,6 @@
     font-weight: 400;
     color: var(--teal);
     line-height: 1.2;
-    white-space: nowrap !important;
     display: inline-block;
     clip-path: inset(0 100% 0 0);
     animation: typeIn 0.8s steps(12, end) forwards;
@@ -206,6 +206,13 @@
     .polar-letter {
       font-size: clamp(44px, 12vw, 64px);
       width: 70px;
+    }
+    .word-main {
+      white-space: nowrap;
+      overflow: visible;
+    }
+    .polar-row {
+      overflow: visible;
     }
   }
 </style>
