@@ -196,23 +196,30 @@
     .hero {
       flex-direction: column;
       gap: 40px;
-      padding: 48px 28px;
+      padding: 48px 20px;
       min-height: unset;
+      overflow: hidden;
     }
     .split-divider {
       width: 36px;
       height: 1px;
     }
     .polar-letter {
-      font-size: clamp(44px, 12vw, 64px);
-      width: 70px;
+      font-size: clamp(36px, 10vw, 56px);
+      width: clamp(50px, 13vw, 70px);
+    }
+    .row-divider {
+      flex-shrink: 0;
     }
     .word-main {
+      font-size: clamp(13px, 4vw, 20px);
       white-space: nowrap;
-      overflow: visible;
+    }
+    .right-side {
+      width: 100%;
     }
     .polar-row {
-      overflow: visible;
+      width: 100%;
     }
   }
 </style>
