@@ -72,4 +72,3 @@ theme = "PaperMod"
     [markup.goldmark.renderer]
       unsafe = true
 
-disableKinds = ["RSS"]

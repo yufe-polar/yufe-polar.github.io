@@ -17,3 +17,36 @@
 
 {{- $ev := resources.Get "css/extended/events.css" | minify | fingerprint -}}
 <link rel="stylesheet" href="{{ $ev.RelPermalink }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ResearchProject",
+  "name": "POLAR Project",
+  "alternateName": "Polemics in Online Language and Automated Recognition",
+  "description": "A 24-month collaborative research project funded within the YUFE Alliance, investigating how online speakers express stance and controversy through discursive strategies, and how such strategies can be identified qualitatively and detected automatically.",
+  "url": "{{ $.Site.BaseURL }}",
+  "startDate": "2025",
+  "endDate": "2027",
+  "funder": {
+    "@type": "Organization",
+    "name": "YUFE Alliance"
+  },
+  "sourceOrganization": {
+    "@type": "EducationalOrganization",
+    "name": "Université Sorbonne Nouvelle"
+  },
+  "member": [
+    { "@type": "Person", "name": "Georgeta Cislaru", "jobTitle": "Principal Investigator" },
+    { "@type": "Person", "name": "Fabienne Baider", "jobTitle": "Co-lead" },
+    { "@type": "Person", "name": "Luna De Bruyne", "jobTitle": "Co-investigator" },
+    { "@type": "Person", "name": "Sandrine Reboul-Touré", "jobTitle": "Co-investigator" },
+    { "@type": "Person", "name": "Ho Won Kim", "jobTitle": "Researcher" },
+    { "@type": "Person", "name": "Irina Ghidali", "jobTitle": "Researcher" },
+    { "@type": "Person", "name": "Ian McKenzie", "jobTitle": "Researcher" },
+    { "@type": "Person", "name": "Jens Lemmens", "jobTitle": "Researcher" },
+    { "@type": "Person", "name": "Jens Van Nooten", "jobTitle": "Researcher" }
+  ],
+  "keywords": "polemics, online discourse, NLP, discourse analysis, stance detection, hate speech, sentiment analysis, pragmatics, YUFE"
+}
+</script>
