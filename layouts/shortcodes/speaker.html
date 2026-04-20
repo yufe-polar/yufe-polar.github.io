@@ -1,0 +1,5 @@
+<div class="speaker-card">
+  <span class="speaker-name">{{ .Get "name" }}</span>
+  <span class="speaker-affil">{{ .Get "affil" }}</span>
+  {{ with .Get "with" }}<span class="speaker-with">With {{ . }}</span>{{ end }}
+</div>
