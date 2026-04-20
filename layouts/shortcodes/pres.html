@@ -1,0 +1,7 @@
+<div class="pres-block">
+  <div class="pres-header">
+    <span class="pres-num">Presentation {{ .Get "n" }}</span>
+    <span class="pres-time">{{ .Get "time" }}</span>
+  </div>
+  <div class="pres-body">{{ .Inner | markdownify }}</div>
+</div>

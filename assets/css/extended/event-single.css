@@ -1,0 +1,78 @@
+.event-info-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: center;
+  padding: 0.9rem 1.25rem;
+  background: var(--polar-card);
+  border: 1px solid var(--polar-border);
+  border-radius: 8px;
+  margin: 0.25rem 0 2.5rem;
+  font-size: 0.9rem;
+  color: var(--polar-teal);
+  font-weight: 500;
+}
+
+.event-info-bar .sep {
+  color: var(--polar-border);
+}
+
+.pres-block {
+  border-left: 3px solid var(--polar-teal);
+  background: var(--polar-card);
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem 1.75rem;
+  margin: 2.5rem 0;
+}
+
+.pres-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--polar-border);
+}
+
+.pres-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--polar-teal);
+}
+
+.pres-time {
+  font-size: 0.875rem;
+  color: var(--secondary);
+}
+
+.pres-body > p:first-child {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.speaker-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-left: 2px solid var(--polar-border);
+  padding: 0.5rem 1rem;
+  margin: 0.75rem 0 1.5rem;
+}
+
+.speaker-name {
+  font-weight: 600;
+}
+
+.speaker-affil {
+  font-size: 0.875rem;
+  color: var(--secondary);
+}
+
+.speaker-with {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  font-style: italic;
+}
