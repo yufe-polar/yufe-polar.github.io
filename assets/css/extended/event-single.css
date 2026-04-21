@@ -186,6 +186,7 @@
 .speaker-abstract p {
   font-size: .93rem;
   line-height: 1.8;
+  text-align: justify;
 }
 
 .speaker-abstract p + p { margin-top: 1em; }
