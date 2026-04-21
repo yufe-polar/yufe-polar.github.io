@@ -80,8 +80,6 @@
 }
 
 .event-body-inner {
-  max-width: 720px;
-  margin: 0 auto;
   padding: 3rem 2rem 4rem;
 }
 
@@ -96,72 +94,80 @@
   margin-bottom: 2.5rem;
 }
 
-/* ── Speaker block ──────────────────────────────────────────── */
+/* ── Speaker block: left teal panel + right abstract ────────── */
 .speaker-block {
-  margin-bottom: 2.5rem;
+  display: flex;
+  margin-bottom: 2rem;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 14px rgba(0,0,0,.08);
 }
 
+/* LEFT: teal column */
 .speaker-header {
+  width: 210px;
+  flex-shrink: 0;
   background: var(--polar-teal, #1a5f5a);
-  padding: 1.4rem 1.75rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  text-align: center;
+  padding: 2rem 1.25rem 1.75rem;
+  gap: 0;
 }
 
 .speaker-photo {
-  width: 72px !important;
-  height: 72px !important;
+  width: 96px !important;
+  height: 96px !important;
   border-radius: 50% !important;
   object-fit: cover;
   object-position: center top;
-  border: 2px solid rgba(255,255,255,.25);
-  flex-shrink: 0;
+  border: 3px solid rgba(255,255,255,.25);
   display: block;
+  margin-bottom: 1rem;
 }
 
-.speaker-meta { flex: 1; min-width: 0; }
-
 .speaker-name {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #fff;
-  line-height: 1.2;
-  margin-bottom: .2rem;
+  line-height: 1.25;
+  margin-bottom: .35rem;
 }
 
 .speaker-affil {
-  font-size: .82rem;
-  color: rgba(255,255,255,.65);
-  margin-bottom: .1rem;
+  font-size: .78rem;
+  color: rgba(255,255,255,.6);
+  line-height: 1.4;
+  margin-bottom: .25rem;
 }
 
 .speaker-with {
-  font-size: .82rem;
+  font-size: .78rem;
   font-style: italic;
-  color: rgba(255,255,255,.5);
-  margin-bottom: .6rem;
+  color: rgba(255,255,255,.45);
+  line-height: 1.4;
+  margin-bottom: .85rem;
 }
 
 .time-badge {
   display: inline-block;
-  font-size: .68rem;
+  font-size: .65rem;
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: #c9a84c;
   border: 1px solid rgba(201,168,76,.5);
   border-radius: 100px;
-  padding: .2rem .75rem;
-  margin-top: .5rem;
+  padding: .25rem .8rem;
+  margin-top: auto;
 }
 
+/* RIGHT: cream abstract column */
 .speaker-abstract {
+  flex: 1;
   background: var(--polar-card, #faf7f2);
-  padding: 1.75rem 1.75rem 2rem;
+  padding: 2rem 2rem 2rem;
 }
 
 /* talk title = first paragraph in .speaker-abstract */
@@ -179,8 +185,6 @@
 .speaker-abstract p {
   font-size: .93rem;
   line-height: 1.8;
-  text-align: justify;
-  hyphens: auto;
 }
 
 .speaker-abstract p + p { margin-top: 1em; }
