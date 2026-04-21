@@ -173,11 +173,12 @@
 
 /* talk title = first paragraph in .speaker-abstract */
 .speaker-abstract > p:first-child {
-  font-size: 1.05rem;
-  font-weight: 600;
-  font-style: italic;
-  line-height: 1.5;
-  color: var(--primary, #1a1a1a);
+  font-size: 1.08rem;
+  font-weight: 800;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: -.01em;
+  color: #1a1a1a;
   margin-bottom: 1.25rem;
   padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--polar-border, #e0d9cd);
