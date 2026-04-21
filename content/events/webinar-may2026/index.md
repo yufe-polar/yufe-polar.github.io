@@ -7,8 +7,12 @@ event_type: "Seminar"
 location: "Online (Google Meet)"
 series_label: "POLAR Webinar · №1"
 series_sub: "1st POLAR Online Webinar — Seminar Series"
+list_title: "POLAR Seminar №1 : Framing Polemical Discourse"
 meet_link: "https://meet.google.com/fea-cevx-gxq"
-summary: "First online webinar of the POLAR Project, featuring two presentations on polemical discourse — one on 'just asking questions' as a political strategy, and one on AI-based detection of polemical texts."
+summary: |
+  **Geoffrey Raymond** (UC Santa Barbara) — *"Weaponizing doubt: Shifting the boundaries of legitimate political discourse by 'just asking questions'"*
+
+  **Ruth Amossy** (Tel Aviv University) — *"To what extent can an automated procedure detect polemical discourse? The contribution of Discourse Analysis"*
 hideMeta: true
 # cover:
 #   image: "banner.png"
