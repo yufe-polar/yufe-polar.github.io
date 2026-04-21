@@ -1,4 +1,8 @@
 {{ define "main" }}
+<style>
+  /* Override PaperMod container width for event pages only */
+  .main { max-width: min(1100px, calc(100vw - 3rem)) !important; }
+</style>
 <article class="event-single-page">
 
   {{/* ── HERO ─────────────────────────────────────────── */}}

@@ -2,7 +2,8 @@
 .event-hero {
   background: #0d1f1e;
   background-image: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(26,95,90,.35) 0%, transparent 70%);
-  padding: 3.5rem 2rem 3rem;
+  padding: 3.5rem 2.5rem 3rem;
+  border-radius: 12px;
   color: #fff;
 }
 
@@ -80,7 +81,7 @@
 }
 
 .event-body-inner {
-  padding: 3rem 2rem 4rem;
+  padding: 3rem 0 4rem;
 }
 
 .event-section-label {
