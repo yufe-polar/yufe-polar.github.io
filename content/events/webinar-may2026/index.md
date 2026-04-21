@@ -14,10 +14,10 @@ summary: |
 
   **Ruth Amossy** (Tel Aviv University) — *"To what extent can an automated procedure detect polemical discourse? The contribution of Discourse Analysis"*
 hideMeta: true
-# cover:
-#   image: "banner.png"
-#   alt: "1st POLAR Online Webinar"
-#   relative: true
+cover:
+  image: "email-banner.png"
+  alt: "POLAR Webinar №1 — Framing Polemical Discourse"
+  relative: true
 ---
 
 <p class="event-section-label">Programme</p>
