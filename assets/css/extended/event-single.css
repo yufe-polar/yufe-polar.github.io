@@ -173,16 +173,14 @@
 
 /* talk title = first paragraph in .speaker-abstract */
 .speaker-abstract > p:first-child {
-  font-size: 1.08rem;
-  font-weight: 800;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
   font-style: normal;
-  line-height: 1.4;
-  letter-spacing: -.01em;
+  line-height: 1.45;
   color: var(--polar-teal, #1a5f5a);
   margin-bottom: 1.25rem;
   padding-bottom: 1.25rem;
-  padding-left: 1rem;
-  border-left: 3px solid #c9a84c;
   border-bottom: 1px solid var(--polar-border, #e0d9cd);
 }
 
