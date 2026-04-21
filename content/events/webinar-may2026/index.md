@@ -22,7 +22,7 @@ hideMeta: true
 
 <p class="event-section-label">Programme</p>
 
-{{< presentation name="Geoffrey Raymond" affil="UC Santa Barbara · VU University Amsterdam" with="Lotte van Burgsteden & Hedwig te Molder" time="14:00 – 15:30 CET" photo="geoffrey-raymond.jpg" >}}
+{{< presentation name="Geoffrey Raymond" affil="UC Santa Barbara" with="Lotte van Burgsteden & Hedwig te Molder (VU University Amsterdam)" time="14:00 – 15:30 CET" photo="geoffrey-raymond.jpg" >}}
 
 **"Weaponizing doubt: Shifting the boundaries of legitimate political discourse by 'just asking questions'"**
 
