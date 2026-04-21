@@ -191,6 +191,46 @@
 
 .speaker-abstract p + p { margin-top: 1em; }
 
+/* ── Mobile ─────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .event-hero {
+    padding: 2rem 1.25rem 1.75rem;
+  }
+
+  .speaker-block {
+    flex-direction: column;
+  }
+
+  .speaker-header {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding: 1.25rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .speaker-photo {
+    flex-shrink: 0;
+    margin-bottom: 0 !important;
+  }
+
+  .speaker-meta {
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+  }
+
+  .time-badge {
+    margin-top: .4rem;
+    align-self: flex-start;
+  }
+
+  .speaker-abstract {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   .event-body { background: var(--polar-cream, #1a1f1e); }
