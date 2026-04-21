@@ -1,0 +1,16 @@
+<div class="speaker-block">
+  <div class="speaker-header">
+    {{ with .Get "photo" }}
+    <img class="speaker-photo" src="{{ $.Page.RelPermalink }}{{ . }}" alt="{{ $.Get "name" }}">
+    {{ end }}
+    <div class="speaker-meta">
+      <div class="speaker-name">{{ .Get "name" }}</div>
+      <div class="speaker-affil">{{ .Get "affil" }}</div>
+      {{ with .Get "with" }}<div class="speaker-with">with {{ . }}</div>{{ end }}
+      <span class="time-badge">{{ .Get "time" }}</span>
+    </div>
+  </div>
+  <div class="speaker-abstract">
+    {{ .Inner | markdownify }}
+  </div>
+</div>
