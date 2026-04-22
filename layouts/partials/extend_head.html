@@ -4,9 +4,9 @@
 
 <style>
 /* Dark mode logo swap — two-img approach (reliable cross-browser) */
-.logo a img.logo-dark { display: none; }
-body.dark .logo a img.logo-light { display: none; }
-body.dark .logo a img.logo-dark { display: inline; }
+.logo a img.logo-dark { display: none !important; }
+body.dark .logo a img.logo-light { display: none !important; }
+body.dark .logo a img.logo-dark { display: inline !important; }
 
 /* Dark mode talk title → pure white (beat typography.css .dark p !important) */
 body.dark .speaker-abstract > p:first-child,
