@@ -3,10 +3,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=EB+Garamond:wght@700;800&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* Dark mode logo swap (CSS content, works Chrome/Edge/Safari) */
-body.dark .logo img {
-  content: url('/images/logo_dark_mode.png');
-}
+/* Dark mode logo swap — two-img approach (reliable cross-browser) */
+.logo a img.logo-dark { display: none; }
+body.dark .logo a img.logo-light { display: none; }
+body.dark .logo a img.logo-dark { display: inline; }
 
 /* Dark mode talk title → pure white (beat typography.css .dark p !important) */
 body.dark .speaker-abstract > p:first-child,
