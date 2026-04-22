@@ -8,7 +8,7 @@
 }
 
 /* Dark mode: restore deep dark green */
-.dark .event-hero {
+body.dark .event-hero {
   background: #0d1f1e;
   background-image: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(26,95,90,.35) 0%, transparent 70%);
 }
