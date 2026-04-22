@@ -1,10 +1,16 @@
 /* ── Hero ───────────────────────────────────────────────────── */
 .event-hero {
-  background: #0d1f1e;
-  background-image: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(26,95,90,.35) 0%, transparent 70%);
+  background: #1a5f5a;
+  background-image: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(26,120,110,.4) 0%, transparent 70%);
   padding: 3.5rem 2.5rem 3rem;
   border-radius: 12px;
   color: #fff;
+}
+
+/* Dark mode: restore deep dark green */
+.dark .event-hero {
+  background: #0d1f1e;
+  background-image: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(26,95,90,.35) 0%, transparent 70%);
 }
 
 .hero-chip {
