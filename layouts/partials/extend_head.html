@@ -13,10 +13,12 @@
     img.src = document.documentElement.classList.contains('dark') ? DARK : LIGHT;
   }
 
-  // Fire on DOMContentLoaded, window load (fallback), and any toggle
-  document.addEventListener('DOMContentLoaded', applyLogo);
+  // PaperMod applies .dark to <body>, so watch body for class changes
+  document.addEventListener('DOMContentLoaded', function() {
+    applyLogo();
+    new MutationObserver(applyLogo).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  });
   window.addEventListener('load', applyLogo);
-  new MutationObserver(applyLogo).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 })();
 </script>
 
