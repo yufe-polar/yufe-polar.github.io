@@ -236,9 +236,8 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .event-body { background: var(--polar-cream, #1a1f1e); }
-  .speaker-abstract { background: var(--polar-card, #1f2726); }
-  .speaker-abstract > p:first-child { color: #f0ece4; }
-  .speaker-abstract p { color: #c8c4bc; }
-}
+.dark .event-body { background: var(--polar-cream, #1a1f1e); }
+.dark .speaker-header { background: #163f3b; }
+.dark .speaker-abstract { background: var(--polar-card, #1f2726); }
+.dark .speaker-abstract > p:first-child { color: #f0ece4; }
+.dark .speaker-abstract p { color: #c8c4bc; }
