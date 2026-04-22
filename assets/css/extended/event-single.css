@@ -82,6 +82,27 @@ html[data-theme="dark"] .event-hero {
 .hero-pill-join:hover { background: rgba(201,168,76,.25); }
 .hero-pill-join svg { opacity: 1; }
 
+/* ── Workshop body text ─────────────────────────────────────── */
+.event-body-inner p {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.9;
+  text-align: justify;
+}
+.event-body-inner p + p { margin-top: 1.2em; }
+
+.event-body-inner img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+html[data-theme="dark"] .event-body-inner p,
+.dark .event-body-inner p { color: #c8c4bc; }
+
 /* ── Body wrapper ───────────────────────────────────────────── */
 .event-body {
   background: var(--polar-cream, #f5f0e8);
