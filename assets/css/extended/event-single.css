@@ -239,5 +239,5 @@
 .dark .event-body { background: var(--polar-cream, #1a1f1e); }
 .dark .speaker-header { background: #163f3b; }
 .dark .speaker-abstract { background: var(--polar-card, #1f2726); }
-.dark .speaker-abstract > p:first-child { color: #fff; }
+.dark .speaker-abstract > p:first-child { color: #fff !important; }
 .dark .speaker-abstract p { color: #c8c4bc; }
