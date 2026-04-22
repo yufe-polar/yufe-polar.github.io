@@ -185,8 +185,10 @@
 }
 
 .speaker-abstract p {
-  font-size: .93rem;
-  line-height: 1.8;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.95;
+  color: #111;
   text-align: justify;
 }
 
