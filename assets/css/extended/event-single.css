@@ -8,7 +8,8 @@
 }
 
 /* Dark mode: restore deep dark green */
-body.dark .event-hero {
+body.dark .event-hero,
+html[data-theme="dark"] .event-hero {
   background: #0d1f1e;
   background-image: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(26,95,90,.35) 0%, transparent 70%);
 }
@@ -242,8 +243,8 @@ body.dark .event-hero {
 }
 
 /* Dark mode */
-.dark .event-body { background: var(--polar-cream, #1a1f1e); }
-.dark .speaker-header { background: #163f3b; }
-.dark .speaker-abstract { background: var(--polar-card, #1f2726); }
-.dark .speaker-abstract > p:first-child { color: #fff !important; }
-.dark .speaker-abstract p { color: #c8c4bc; }
+.dark .event-body, html[data-theme="dark"] .event-body { background: var(--polar-cream, #1a1f1e); }
+.dark .speaker-header, html[data-theme="dark"] .speaker-header { background: #163f3b; }
+.dark .speaker-abstract, html[data-theme="dark"] .speaker-abstract { background: var(--polar-card, #1f2726); }
+.dark .speaker-abstract > p:first-child, html[data-theme="dark"] .speaker-abstract > p:first-child { color: #fff !important; }
+.dark .speaker-abstract p, html[data-theme="dark"] .speaker-abstract p { color: #c8c4bc; }
