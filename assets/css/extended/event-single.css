@@ -108,7 +108,7 @@
 .speaker-header {
   width: 210px;
   flex-shrink: 0;
-  background: var(--polar-teal, #1a5f5a);
+  background: #1a5f5a;
   display: flex;
   flex-direction: column;
   align-items: center;
