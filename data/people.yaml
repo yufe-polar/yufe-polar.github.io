@@ -1,0 +1,100 @@
+groups:
+  - id: paris
+    label: Paris
+    members:
+      - name: Georgeta Cislaru
+        photo: georgeta.jpg
+        initials: GC
+        role: Principal Investigator (PI)
+        institution: Université Sorbonne Nouvelle
+        tags:
+          - Semantics and Pragmatics
+          - Discourse markers
+          - Online discourse analysis
+
+      - name: Sandrine Reboul-Touré
+        photo: sandrine.jpg
+        initials: SR
+        role: Co-investigator
+        institution: Université Sorbonne Nouvelle
+        tags:
+          - Lexical analysis
+          - Online discourse analysis
+
+      - name: Irina Ghidali
+        photo: irina.jpg
+        initials: IG
+        role: Researcher
+        institution: Université Sorbonne Nouvelle
+        tags:
+          - Discourse markers
+          - Pragmatics and Syntax
+          - Hate speech
+
+      - name: Ho Won Kim
+        photo: howon.jpg
+        initials: HK
+        role: Researcher
+        institution: Université Sorbonne Nouvelle
+        tags:
+          - Discourse analysis
+          - Functional lexical analysis
+
+      - name: Ian McKenzie
+        photo: ian.jpg
+        initials: IM
+        role: Intern
+        institution: Université de Caen
+        tags:
+          - Historical semantics
+          - Pragmatics
+          - Discourses of identity
+        links:
+          - type: linkedin
+            url: https://www.linkedin.com/in/ian-mckenzie-15879b261
+
+  - id: antwerp
+    label: Antwerp
+    members:
+      - name: Luna De Bruyne
+        photo: luna.jpg
+        initials: LB
+        role: Co-investigator
+        institution: University of Antwerp
+        tags:
+          - Computational linguistics
+          - Automated content analysis
+          - Emotion detection
+
+      - name: Jens Lemmens
+        photo: lemmens.jpg
+        initials: JL
+        role: Researcher
+        institution: University of Antwerp
+        tags:
+          - Computational linguistics
+          - Topic/narrative classification
+          - Emotion detection
+
+      - name: Jens Van Nooten
+        photo: nooten.jpg
+        initials: JN
+        role: Researcher
+        institution: University of Antwerp
+        tags:
+          - Computational linguistics
+          - Multi-label classification
+          - Emotion detection
+
+  - id: cyprus
+    label: Cyprus
+    members:
+      - name: Fabienne Baider
+        photo: fabienne.jpg
+        initials: FB
+        role: Co-lead (Co-PI)
+        institution: University of Cyprus
+        tags:
+          - Argumentation
+          - Critical Discourse Analysis
+          - Emotions in polarized discourse

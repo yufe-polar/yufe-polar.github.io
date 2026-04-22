@@ -1,3 +1,10 @@
+/* ── People/list pages: widen content area for card grids ── */
+body.list .post-content,
+body.list .page-content {
+  max-width: 960px !important;
+  width: 100% !important;
+}
+
 /* ══════════════════════════════
    People cards — grid layout
 ══════════════════════════════ */
