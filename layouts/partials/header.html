@@ -5,12 +5,8 @@
             {{- if site.Title }}
             <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
                 {{- if site.Params.label.icon }}
-                {{- /* Render both logo variants; CSS controls which is visible per theme */ -}}
                 <img src="/images/polar-logo.png"
-                     alt="" aria-label="logo" class="logo-light"
-                     height="{{- site.Params.label.iconHeight | default "30" -}}">
-                <img src="/images/polar-logo-white-transparent.png"
-                     alt="" aria-label="logo" class="logo-dark"
+                     alt="" aria-label="logo"
                      height="{{- site.Params.label.iconHeight | default "30" -}}">
                 {{- else if hasPrefix site.Params.label.iconSVG "<svg" }}
                     {{ site.Params.label.iconSVG | safeHTML }}
