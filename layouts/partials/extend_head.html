@@ -13,8 +13,9 @@
     img.src = document.documentElement.classList.contains('dark') ? DARK : LIGHT;
   }
 
-  // Apply immediately and on every class change on <html>
+  // Fire on DOMContentLoaded, window load (fallback), and any toggle
   document.addEventListener('DOMContentLoaded', applyLogo);
+  window.addEventListener('load', applyLogo);
   new MutationObserver(applyLogo).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 })();
 </script>
