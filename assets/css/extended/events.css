@@ -28,9 +28,12 @@
   color: var(--polar-teal);
 }
 
-.dark .events-section h2 {
+.dark .events-section h2,
+html[data-theme="dark"] .events-section h2 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
+
+
 
 .events-rows {
   display: grid;
@@ -143,4 +146,11 @@
   .event-summary {
     display: none;
   }
+}
+
+
+/* ── Dark mode overrides ── */
+html[data-theme="dark"] .event-title,
+.dark .event-title {
+  color: #ffffff !important;
 }
