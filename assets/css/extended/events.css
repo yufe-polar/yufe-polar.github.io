@@ -150,7 +150,7 @@ html[data-theme="dark"] .events-section h2 {
 
 
 /* ── Dark mode overrides ── */
-html[data-theme="dark"] .event-title,
-.dark .event-title {
+html[data-theme="dark"] .events-section h2,
+.dark .events-section h2 {
   color: #ffffff !important;
 }
