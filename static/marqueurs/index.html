@@ -94,7 +94,7 @@ details.cm summary{font-size:13px;color:var(--muted);cursor:pointer}
 details.cm textarea{margin-top:8px}
 .footer{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:12px 16px;z-index:6}
 .footer .in{max-width:780px;margin:0 auto;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.status{font-size:14px;color:var(--muted)}
+.status{font-size:14px;color:var(--muted);flex:1;text-align:center;min-width:180px}
 .hidden{display:none!important}
 .done-screen{text-align:center;padding:48px 24px}
 .done-screen .big{font-size:44px}
@@ -870,10 +870,11 @@ $("#submit").onclick=async ()=>{
     return;
   }
   const payload=JSON.stringify({submission_id:state.sid, name:state.name, submitted_at:new Date().toISOString(), answers:rows()});
-  $("#submit").disabled=true; $("#status").textContent="Envoi… · Sending…";
+  $("#submit").disabled=true;
   let ok=false, verified=false;
   const t0 = Date.now();
-  const tick = setInterval(()=>{ $("#status").textContent=`Envoi… · Sending… (${Math.round((Date.now()-t0)/1000)} s)`; },1000);
+  const upd = ()=>{ $("#status").textContent=`Envoi en cours… (${Math.round((Date.now()-t0)/1000)} s) — merci de patienter jusqu'à l'écran de confirmation. · Sending… this may take a few seconds — please wait for the confirmation screen.`; };
+  upd(); const tick = setInterval(upd,1000);
   const viaGAS = (typeof google!=="undefined" && google.script && google.script.run);
   try{
     let j;

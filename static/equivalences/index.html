@@ -139,7 +139,7 @@ table.ov tr:hover td{background:var(--bg)}
 
 .footer{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:12px 16px;z-index:6}
 .footer .in{max-width:800px;margin:0 auto;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.status{font-size:14px;color:var(--muted)}
+.status{font-size:14px;color:var(--muted);flex:1;text-align:center;min-width:180px}
 .done-screen{text-align:center;padding:48px 24px}
 .done-screen .big{font-size:44px}
 @media (max-width:560px){
@@ -284,7 +284,7 @@ fr:{
   equiv:l=>`Équivalent ${l}`, draft:"brouillon",
   general:"Commentaire général (facultatif)",
   status:(v,n,p)=>`${v}/${n} votes · ${p} équivalent(s) proposé(s)`,
-  back:"← Retour", submit:"Envoyer", sending:s=>`Envoi… (${s} s)`,
+  back:"← Retour", submit:"Envoyer", sending:s=>`Envoi en cours… (${s} s) — cela peut prendre quelques secondes. Merci de patienter jusqu'à l'affichage de l'écran de confirmation.`,
   fail:e=>`Échec de l'envoi (${e}) — un fichier .csv va être téléchargé ; merci de l'envoyer par e-mail.`,
   doneTitle:"Merci ! Vos réponses ont été envoyées.", download:"Télécharger une copie (.csv)"
 },
@@ -313,7 +313,7 @@ en:{
   equiv:l=>`Equivalent ${l}`, draft:"draft",
   general:"General comment (optional)",
   status:(v,n,p)=>`${v}/${n} votes · ${p} equivalent(s) suggested`,
-  back:"← Back", submit:"Submit", sending:s=>`Sending… (${s} s)`,
+  back:"← Back", submit:"Submit", sending:s=>`Sending… (${s} s) — this may take a few seconds. Please wait until the confirmation screen appears.`,
   fail:e=>`Submission failed (${e}) — a .csv file will be downloaded; please send it by e-mail.`,
   doneTitle:"Thank you — your responses have been submitted.", download:"Download a copy (.csv)"
 }};
@@ -492,7 +492,7 @@ $("#dl-backup").onclick=downloadCSV;
 $("#submit").onclick=async()=>{
   const payload=JSON.stringify(buildPayload());
   $("#submit").disabled=true;
-  const t0=Date.now(), tick=setInterval(()=>{$("#status").textContent=L().sending(Math.round((Date.now()-t0)/1000));},1000);
+  const t0=Date.now(), upd=()=>{$("#status").textContent=L().sending(Math.round((Date.now()-t0)/1000));}; upd(); const tick=setInterval(upd,1000);
   let ok=false, err="";
   try{
     const ctrl=new AbortController(), to=setTimeout(()=>ctrl.abort(),45000); let j;
