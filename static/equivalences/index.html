@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon-32x32.png">
+<title>POLAR · Interlinguistic equivalences</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycbzXL93RI0v_OMqMohN9ISE8wRmULCUJSsB-gRnVYgnGsqUQ2S73YnuBOtioiFNXHb49/exec";
+</script>
+<style>
+:root{
+  --bg:#f6f4ef; --surface:#ffffff; --ink:#1d1b18; --muted:#6b665e; --line:#e3ded4;
+  --accent:#8a2c1f; --accent-soft:#f3e3df; --ok:#2f6b4f; --chip:#efebe3;
+  --s:#2f5d8a; --p:#7a4d9a; --e:#2f6b4f;
+  --shadow:0 1px 2px rgba(30,25,20,.05),0 4px 16px rgba(30,25,20,.05);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#161513; --surface:#1f1d1a; --ink:#ece8e1; --muted:#a39d93; --line:#34312c;
+  --accent:#e0826f; --accent-soft:#3a2420; --ok:#7cc4a0; --chip:#2a2824;
+  --s:#8db7e0; --p:#c4a2de; --e:#7cc4a0; --shadow:none;}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:800px;margin:0 auto;padding:40px 16px 130px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(28px,5vw,38px);line-height:1.15}
+h2{font-size:clamp(21px,3.4vw,25px);line-height:1.25}
+h3{font-size:19px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
+.lede{color:var(--muted);margin:14px 0 0}
+.en{color:var(--muted);font-size:.92em}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:var(--shadow);margin-top:22px}
+.prose p{margin:0 0 14px}
+.prose p:last-child{margin-bottom:0}
+.axis{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:6px;font:700 13px Inter;color:#fff;margin-right:8px;vertical-align:1px}
+.axis.S{background:var(--s)}.axis.P{background:var(--p)}.axis.E{background:var(--e)}
+label.field{display:block;font-weight:600;margin-bottom:8px}
+input[type=text],textarea{width:100%;font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 13px;outline:none}
+input[type=text]:focus,textarea:focus{border-color:var(--accent)}
+textarea{min-height:76px;resize:vertical;font-size:14.5px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px Inter,sans-serif;border:0;border-radius:999px;padding:12px 22px;cursor:pointer;background:var(--accent);color:#fff}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:22px}
+.err{color:var(--accent);font-size:14px;margin-top:10px;min-height:1em}
+.hidden{display:none!important}
+
+/* sticky */
+.sticky{position:sticky;top:0;z-index:5;background:var(--bg);background:color-mix(in srgb,var(--bg) 93%,transparent);backdrop-filter:blur(6px);padding:12px 0;border-bottom:1px solid var(--line)}
+.prog{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted)}
+.bar{flex:1;height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s}
+.pill{font:600 12.5px Inter,sans-serif;color:var(--accent);background:transparent;border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer;white-space:nowrap}
+.pill:hover{border-color:var(--accent)}
+.anchor{scroll-margin-top:72px}
+
+/* cluster */
+.cl{background:var(--surface);border:1px solid var(--line);border-radius:16px;margin-top:22px;box-shadow:var(--shadow);overflow:hidden}
+.cl.voted{border-color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}
+.cl-head{padding:22px 24px 6px}
+.cl-num{font:600 12px Inter;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.cl-head h2{margin-top:6px}
+.exprs{display:grid;gap:8px;margin:18px 0 4px}
+.ex-row{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:baseline;padding:10px 14px;background:var(--bg);border-radius:10px}
+.ex-row .lg{font:600 12px Inter;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ex-row .tx{font-family:Fraunces,Georgia,serif;font-size:18px;font-style:italic;white-space:pre-line}
+.analysis{padding:8px 24px 6px}
+.blk{padding:12px 0;border-top:1px solid var(--line);font-size:15px}
+.blk:first-child{border-top:0}
+.blk.cont{border-top:0;padding-top:0}
+.blk em,.cf em{font-style:italic;font-family:Fraunces,Georgia,serif;font-size:1.05em}
+.blk .lab{font-weight:600}
+.cf{background:var(--chip);border-radius:10px;padding:12px 14px;margin:6px 0 10px;font-size:14.5px}
+.vote{padding:18px 24px 22px;background:var(--bg);border-top:1px solid var(--line)}
+.vq{font-weight:600}
+.vq span{font-weight:400;color:var(--muted)}
+.opts{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts label{min-width:46px;height:46px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px;cursor:pointer;font-weight:600;background:var(--surface);transition:all .12s;user-select:none}
+.opts label:hover{border-color:var(--muted)}
+.opts input:checked+label{background:var(--accent);border-color:var(--accent);color:#fff}
+.opts input:focus-visible+label{outline:2px solid var(--accent);outline-offset:2px}
+.opts .sep{width:1px;height:28px;background:var(--line);margin:0 8px}
+.opts label.nsp{padding:0 14px;font-weight:500;font-size:13px;color:var(--muted)}
+.opts input:checked+label.nsp{background:var(--muted);border-color:var(--muted);color:var(--surface)}
+.ends{display:flex;justify-content:space-between;max-width:266px;font-size:11.5px;color:var(--muted);margin-top:4px}
+.clear{font-size:12.5px;color:var(--muted);background:none;border:0;padding:0;margin-left:6px;cursor:pointer;text-decoration:underline}
+.cm{margin-top:16px}
+.cm label{font-size:14px;font-weight:600;display:block;margin-bottom:6px}
+.cm label span{font-weight:400;color:var(--muted)}
+
+/* overview table */
+.ov-wrap{margin-top:14px;overflow-x:auto}
+table.ov{width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.45}
+table.ov th{font:600 11px Inter;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);white-space:nowrap}
+table.ov td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.ov td.n a{font-weight:700;color:var(--accent);text-decoration:none}
+table.ov td.n a:hover{text-decoration:underline}
+table.ov td.ti{font-weight:600}
+table.ov td.x{font-style:italic}
+table.ov td.st{color:var(--muted)}
+table.ov tr:hover td{background:var(--bg)}
+.ov-nb{font-size:13px;color:var(--muted);margin:12px 0 0}
+@media (max-width:700px){
+  table.ov thead{display:none}
+  table.ov,table.ov tbody,table.ov tr,table.ov td{display:block;width:100%}
+  table.ov tr{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;padding:6px 4px}
+  table.ov td{border:0;padding:4px 10px}
+  table.ov td[data-l]::before{content:attr(data-l)" · ";font:600 10.5px Inter;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-style:normal}
+}
+
+/* unpaired */
+.part{margin-top:56px}
+.lang-group{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.lang-group>summary{list-style:none;cursor:pointer;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.lang-group>summary::-webkit-details-marker{display:none}
+.lang-group>summary h3{display:inline}
+.lang-group>summary .meta{font-size:13px;color:var(--muted)}
+.lang-group>summary .chev{transition:transform .2s;color:var(--muted)}
+.lang-group[open]>summary .chev{transform:rotate(90deg)}
+.items{padding:0 22px 10px}
+.u{padding:20px 0;border-top:1px solid var(--line)}
+.u .uid{font:600 11.5px Inter;letter-spacing:.06em;color:var(--muted)}
+.u .expr{font-family:Fraunces,Georgia,serif;font-size:20px;line-height:1.3;margin-top:2px}
+.u .lit{font-size:14.5px;color:var(--muted);font-style:italic;margin-top:2px}
+.exbox{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.exbox>div{background:var(--bg);border-radius:10px;padding:10px 12px;font-size:14px;white-space:pre-line}
+.exbox b{display:block;font:600 10.5px Inter;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.exbox.single{grid-template-columns:1fr}
+.draft{font:600 10px Inter;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:1px}
+.noex{margin-top:10px;font-size:13px;color:var(--muted);font-style:italic}
+.pairs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.pairs label{font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px}
+.u.filled .expr::after{content:" ✓";color:var(--ok);font-size:15px}
+
+.footer{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:12px 16px;z-index:6}
+.footer .in{max-width:800px;margin:0 auto;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.status{font-size:14px;color:var(--muted);flex:1;text-align:center;min-width:180px}
+.done-screen{text-align:center;padding:48px 24px}
+.done-screen .big{font-size:44px}
+@media (max-width:560px){
+  .exbox,.pairs{grid-template-columns:1fr}
+  .ex-row{grid-template-columns:1fr;gap:2px}
+  .card,.cl-head,.analysis,.vote{padding-left:18px;padding-right:18px}
+  .opts label{min-width:42px;height:42px}
+}
+
+/* language switch */
+.langsw{position:fixed;top:12px;right:16px;z-index:20;display:flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px;box-shadow:var(--shadow)}
+.langsw button{font:600 12.5px Inter,sans-serif;letter-spacing:.04em;border:0;background:transparent;color:var(--muted);border-radius:999px;padding:6px 12px;cursor:pointer}
+.langsw button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.sticky .prog{padding-right:104px}
+.blk.cont{border-top:0;padding-top:0}
+.blk em,.cf em,.prose em{font-style:italic;font-family:Fraunces,Georgia,serif;font-size:1.05em}
+.ex-row .tx{white-space:pre-line}
+/* overview table */
+.ov-wrap{margin-top:14px;overflow-x:auto}
+table.ov{width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.45}
+table.ov th{font:600 11px Inter;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);white-space:nowrap}
+table.ov td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.ov td.n a{font-weight:700;color:var(--accent);text-decoration:none}
+table.ov td.n a:hover{text-decoration:underline}
+table.ov td.ti{font-weight:600}
+table.ov td.x{font-style:italic}
+table.ov td.st{color:var(--muted)}
+table.ov tr:hover td{background:var(--bg)}
+.ov-nb{font-size:13px;color:var(--muted);margin:12px 0 0}
+@media (max-width:700px){
+  table.ov thead{display:none}
+  table.ov,table.ov tbody,table.ov tr,table.ov td{display:block;width:100%}
+  table.ov tr{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;padding:6px 4px}
+  table.ov td{border:0;padding:4px 10px}
+  table.ov td[data-l]::before{content:attr(data-l)" · ";font:600 10.5px Inter;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-style:normal}
+  .sticky .prog{padding-right:96px;flex-wrap:wrap;row-gap:8px}
+  .sticky .prog .bar{min-width:60px}
+  .langsw{top:9px;right:12px}
+  .wrap{padding-top:56px}
+}
+</style>
+</head>
+<body>
+<div class="langsw" role="group" aria-label="Language">
+  <button type="button" data-setlang="fr">FR</button><button type="button" data-setlang="en">EN</button>
+</div>
+<div class="wrap">
+
+<!-- ============ SCREEN 1 : introduction ============ -->
+<section id="s-intro">
+  <div class="eyebrow" data-t="eyebrow"></div>
+  <h1 data-t="h1"></h1>
+  <p class="lede" data-t="lede"></p>
+  <div class="card prose" id="intro-text"></div>
+  <div class="card">
+    <h3 style="margin-bottom:10px" data-t="howTitle"></h3>
+    <div class="prose" style="font-size:15px" id="how"></div>
+  </div>
+  <div class="card">
+    <label class="field" for="name" data-t="name"></label>
+    <input type="text" id="name" autocomplete="name">
+    <div class="err" id="intro-err"></div>
+    <div class="row" style="justify-content:flex-end"><button class="btn" id="start" data-t="start"></button></div>
+  </div>
+</section>
+
+<!-- ============ SCREEN 2 : questionnaire ============ -->
+<section id="s-survey" class="hidden">
+  <div class="sticky">
+    <div class="prog">
+      <span id="who"></span><div class="bar"><i id="bar"></i></div><span id="count"></span>
+      <button type="button" class="pill" id="to-spe">S–P–E ↑</button>
+      <button type="button" class="pill" id="to-part2" data-t="toPart2"></button>
+    </div>
+  </div>
+  <div class="card prose anchor" id="spe-reminder" style="font-size:14.5px"></div>
+  <div class="card anchor" id="overview"></div>
+  <div class="part" style="margin-top:36px">
+    <div class="eyebrow" data-t="part1"></div>
+    <h2 data-t="part1Title"></h2>
+  </div>
+  <div id="clusters"></div>
+
+  <div class="part anchor" id="part2">
+    <div class="eyebrow" data-t="part2"></div>
+    <h2 data-t="part2Title"></h2>
+    <div class="card prose" style="font-size:15px" id="part2-intro"></div>
+    <div id="unpaired"></div>
+  </div>
+
+  <div class="card">
+    <label class="field" for="general" data-t="general"></label>
+    <textarea id="general" placeholder="…"></textarea>
+  </div>
+</section>
+
+<!-- ============ SCREEN 3 : done ============ -->
+<section id="s-done" class="hidden">
+  <div class="card done-screen">
+    <div class="big">✓</div>
+    <h2 data-t="doneTitle"></h2>
+    <div class="row" style="justify-content:center"><button class="btn ghost" id="dl-backup" data-t="download"></button></div>
+  </div>
+</section>
+</div>
+
+<div class="footer hidden" id="footer">
+  <div class="in">
+    <button class="btn ghost" id="back" data-t="back"></button>
+    <span class="status" id="status"></span>
+    <button class="btn" id="submit" data-t="submit"></button>
+  </div>
+</div>
+
+<script>
+const DOCS = {"fr": {"intro": ["Dans ce document, l’équivalence interlinguistique n’est pas assimilée à l’équivalence traductionnelle. Deux ou plusieurs expressions peuvent être rapprochées même lorsque leur sens littéral diffère, dès lors que leur fonctionnement linguistique présente des convergences suffisamment motivées. Les rapprochements sont décrits selon trois dimensions complémentaires : sémantique (S), pragmatique (P) et énonciative / épistémique (E). Ces dimensions constituent des axes d’analyse, et non trois conditions cumulatives : une équivalence peut être faible sur le plan sémantique mais forte sur les plans pragmatique et énonciatif.", "S — Équivalence sémantique. Elle concerne la proximité du contenu lexical ou propositionnel des expressions, ainsi que l’éventuel partage d’un même domaine notionnel. Une identité traductionnelle n’est pas requise.", "P — Équivalence pragmatique et interactionnelle. Elle concerne ce que l’expression accomplit dans la séquence discursive. L’analyse peut mobiliser, lorsque cela est pertinent, l’acte de langage réalisé, présupposé ou anticipé, la structure des paires adjacentes, la question rhétorique, la reformulation, l’atténuation, ainsi que les opérations de cadrage méta-pragmatique ou métaénonciatif.", "E — Profil énonciatif / épistémique. Il concerne le positionnement du locuteur à l’égard de son énoncé, du discours d’autrui et du savoir mobilisé : prise en charge, désengagement affiché, modalisation, positionnement par rapport à une doxa, mise en scène de l’ignorance ou de l’incompréhension, construction de l’évidence et asymétrie d’accès au savoir.", "La valeur polémique est volontairement laissée de côté à ce stade. L’objectif immédiat est d’identifier des rapprochements interlinguistiques défendables à partir de S, P et E. Les notions linguistiques mobilisées ci-dessous ne constituent donc pas des critères supplémentaires indépendants : elles servent à préciser le fonctionnement observé à l’intérieur de ces trois axes."], "overview": {"intro_title": "Introduction : cadre de comparaison S–P–E", "title": "Vue d’ensemble des rapprochements proposés", "lead": "Le tableau ci-dessous synthétise les dix rapprochements examinés dans les sections suivantes. Les statuts indiqués sont provisoires : ils constituent des hypothèses de travail fondées sur les convergences S–P–E et devront faire l’objet d’une validation collective.", "nb": "NB. Le statut résume le degré de rapprochement proposé à ce stade ; il ne constitue pas une validation définitive. Pour le cluster 1, le rapprochement avec Τίποτα concerne spécifiquement son emploi sans remerciement préalable.", "head": ["#", "Rapprochement", "Français", "English", "Ελληνικά", "Statut proposé"], "rows": [["1", "Remerciement présupposé / projeté", "Ne me remercie[z] pas", "Thank me later", "Τίποτα (« You’re welcome / It’s nothing »)", "Équivalence pragmatique forte, sous conditions"], ["2", "« Simple question » et mise à distance", "Je demande, c’est pour X", "Genuine question / just asking [for a friend]", "Ρωτάω έτσι (« just asking »)", "Équivalence partielle / à préciser"], ["3", "Feinte d’incompréhension", "—", "I’m confused", "Εγώ απλά δεν κατανοώ (« I simply don’t understand »)", "Équivalence nette EN–EL"], ["4", "Feinte d’ignorance causale", "cf. après… on se demande", "Wondering why / Wonder why…", "γιατί άραγε; (« I wonder why? »)", "Équivalence nette EN–EL"], ["5", "Reformulation révélatrice", "Traduction :", "Translation:", "—", "Équivalence forte FR–EN"], ["6", "Désengagement métaénonciatif", "Je dis ça, je dis rien", "Just saying", "—", "Équivalence forte FR–EN"], ["7", "Rejet bref", "—", "Nah", "Μπα (« Nah »)", "Équivalence nette EN–EL"], ["8", "Pseudo-question reformulant l’autre", "—", "so you suggest that…? / So you think that?", "θέλεις να μας πεις…? (« Are you trying to tell us…? »)", "Rapprochement exploratoire"], ["9", "Question rhétorique orientée", "Vous savez lire ?", "Does anyone really believe that…? / Really?", "Μπορεί κάποιος να είναι…? (« Can anyone be…? ») / μήπως λες βλακείες; (« Are you perhaps talking nonsense? »)", "Équivalence faible"], ["10", "Cadrage métadiscursif d’une opinion", "—", "[My] unpopular opinion", "Ταπεινή μου γνώμη (« My humble opinion »)", "Équivalence faible / exploratoire"]]}, "clusters": [{"n": 1, "title": "Remerciement anticipé, projeté ou retourné", "expr": [{"lang": "Français", "text": "Ne me remercie[z] pas"}, {"lang": "English", "text": "Thank me later"}, {"lang": "Ελληνικά", "text": "Τίποτα (« You’re welcome / It’s nothing »)"}], "blocks": [{"ax": "S", "label": "Sémantique", "html": "Les trois expressions ne sont pas des traductions littérales. <em>Ne me remerciez pas</em> formule une injonction négative, <em>Thank me later</em> projette le remerciement dans le futur, tandis que <em>Τίποτα</em> correspond conventionnellement à une réponse au remerciement (« de rien »). Elles relèvent néanmoins du même domaine interactionnel de la gratitude."}, {"ax": "P", "label": "Pragmatique", "html": "Le grec <em>Τίποτα</em> présente ici deux emplois à distinguer. Dans son emploi ordinaire, il répond à un remerciement déjà formulé. Lorsqu’il est produit sans remerciement préalable, en revanche, il anticipe la réponse normalement attendue après cet acte. Seul ce second emploi est retenu ici."}, {"ax": "", "label": "", "html": "Dans ce cas, <em>Τίποτα</em> présuppose pragmatiquement la pertinence d’un remerciement non réalisé. <em>Ne me remerciez pas</em> anticipe également un remerciement potentiel, tandis que <em>Thank me later</em> en projette la réalisation future. Les trois formes convergent ainsi en ce qu’elles présupposent, anticipent ou projettent un acte de remerciement, malgré des réalisations interactionnelles différentes."}, {"ax": "E", "label": "Énonciatif / épistémique", "html": "Dans cette configuration, le locuteur se présente comme ayant fourni – ou s’apprêtant à fournir – une contribution qui mériterait la gratitude de l’interlocuteur. Dans les emplois visés, cette contribution peut relever du savoir, de l’information ou de l’expertise, et construire ainsi une asymétrie épistémique entre les participants. Le rapprochement avec <em>Τίποτα</em> concerne précisément cet emploi sans remerciement préalable."}]}, {"n": 2, "title": "Question présentée comme une « simple question » et mise à distance", "expr": [{"lang": "Français", "text": "Je demande, c’est pour X / [Question], c’est pour X"}, {"lang": "English", "text": "Genuine question / just asking [for a friend]"}, {"lang": "Ελληνικά", "text": "Ρωτάω έτσι (« just asking »)"}], "blocks": [{"ax": "S", "label": "Sémantique", "html": "Les formulations convergent autour de l’activité de questionnement, mais la mise à distance n’est pas lexicalisée de manière identique. La correspondance est donc partielle sur le plan sémantique."}, {"ax": "P", "label": "Pragmatique", "html": "Ces expressions fonctionnent comme des cadrages méta-pragmatiques de l’acte interrogatif : la question demeure un acte interrogatif, mais son statut interactionnel est explicitement recadré. Avec <em>c’est pour X</em> / <em>for a friend</em>, la question est présentée comme motivée par l’intérêt d’un tiers ; <em>Genuine question</em> la présente comme une demande d’information, et non, par exemple, comme une question rhétorique ou une mise en cause. Le type de recadrage opéré par les autres variantes (<em>Je demande</em>, <em>just asking</em>, <em>Ρωτάω έτσι</em>) reste à préciser."}, {"ax": "E", "label": "Énonciatif / épistémique", "html": "Le point commun ne réside pas nécessairement dans un désengagement, mais dans la gestion explicite de la posture du locuteur à l’égard de sa propre question. Avec <em>c’est pour X</em> / <em>for a friend</em>, le locuteur affiche une distance vis-à-vis des motivations et/ou des implications de la question ; avec <em>Genuine question</em>, il affiche ou revendique une posture de recherche d’information."}]}, {"n": 3, "title": "Feinte d’incompréhension", "expr": [{"lang": "English", "text": "I’m confused"}, {"lang": "Ελληνικά", "text": "Εγώ απλά δεν κατανοώ (« I simply don’t understand »)"}], "blocks": [{"ax": "S", "label": "Sémantique", "html": "Les deux expressions présentent une forte proximité sémantique : elles déclarent explicitement un état de non-compréhension."}, {"ax": "P", "label": "Pragmatique", "html": "Dans les emplois visés, l’assertion d’incompréhension peut fonctionner comme un acte indirect de contestation. Plutôt que de solliciter réellement une explication, le locuteur met en scène son incapacité à comprendre afin de présenter le discours ou la situation visée comme incohérente, absurde ou difficilement justifiable. Il s’agit ainsi d’une feinte d’incompréhension dont la valeur interactionnelle excède le contenu littéral."}, {"ax": "E", "label": "Énonciatif / épistémique", "html": "Le locuteur affiche un déficit épistémique — « je ne comprends pas » — tout en laissant entendre qu’il dispose en réalité d’une évaluation critique de la situation. Le profil repose donc sur une dissociation entre état épistémique affiché et positionnement implicite : l’ignorance déclarée peut servir à renforcer, plutôt qu’à affaiblir, l’évaluation du locuteur."}]}, {"n": 4, "title": "Feinte d’ignorance causale : « je me demande pourquoi »", "expr": [{"lang": "English", "text": "Wondering why / Wonder why…"}, {"lang": "Ελληνικά", "text": "γιατί άραγε; (« I wonder why? »)"}], "blocks": [{"ax": "S", "label": "Sémantique", "html": "Les formes anglaise et grecque convergent directement autour de l’expression d’une interrogation causale."}, {"ax": "P", "label": "Pragmatique", "html": "L’interrogation peut fonctionner comme une question rhétorique ou une pseudo-question. L’acte interrogatif ne vise alors pas principalement l’obtention d’une information : il met en scène une recherche de cause dont la réponse est déjà orientée, voire tenue pour évidente par le locuteur."}, {"ax": "E", "label": "Énonciatif / épistémique", "html": "Le locuteur construit un état d’incertitude en surface tout en présupposant ou en suggérant un accès privilégié à l’explication pertinente. Cette feinte d’ignorance repose sur une discordance entre modalisation interrogative et certitude épistémique implicite."}, {"ax": "CF", "label": "Cf. français", "html": "<em>après il/elle/on se demande [pourquoi…]</em> présente une proximité fonctionnelle, mais ne constitue pas ici un équivalent direct. La construction française attribue typiquement le questionnement à un tiers dont elle souligne ironiquement l’aveuglement face à une relation causale présentée comme évidente, alors que les formes anglaise et grecque mettent en scène le questionnement du locuteur lui-même."}]}, {"n": 5, "title": "Reformulation révélatrice du discours d’autrui", "expr": [{"lang": "Français", "text": "Traduction :"}, {"lang": "English", "text": "Translation:"}], "blocks": [{"ax": "S", "label": "Sémantique", "html": "La correspondance lexicale et constructionnelle entre les deux expressions est directe."}, {"ax": "P", "label": "Pragmatique", "html": "Dans les emplois considérés, <em>Traduction</em> / <em>Translation</em> ne désigne pas nécessairement une opération interlinguistique. Le marqueur introduit une reformulation métadiscursive du discours d’autrui, présentée comme explicitation de son sens réel, de son intention ou de son implication. La reformulation acquiert ainsi une fonction de dévoilement."}, {"ax": "E", "label": "Énonciatif / épistémique", "html": "Le locuteur adopte une position de surplomb interprétatif et s’attribue une autorité herméneutique : il se présente comme capable d’accéder au « vrai » sens au-delà de la formulation initiale, parfois mieux que son auteur déclaré. Les convergences S, P et E sont ici particulièrement fortes."}]}, {"n": 6, "title": "Désengagement métaénonciatif après une prise de position", "expr": [{"lang": "Français", "text": "Je dis ça, je dis rien"}, {"lang": "English", "text": "Just saying"}], "blocks": [{"ax": "S", "label": "Sémantique", "html": "Les deux expressions ne sont pas strictement synonymes. La formule française lexicalise explicitement une tension entre dire et ne pas dire, tandis que l’anglais réduit rétrospectivement l’intervention à un « simple dire ». Elles partagent néanmoins un même domaine métalinguistique centré sur l’activité de dire."}, {"ax": "P", "label": "Pragmatique", "html": "Les deux formes fonctionnent rétrospectivement comme des commentaires sur l’énoncé précédent. Elles en recadrent la force interactionnelle en présentant l’intervention comme un simple constat ou un « simple dire », ce qui peut atténuer sa portée conflictuelle ou argumentative sans retirer la proposition elle-même."}, {"ax": "E", "label": "Énonciatif / épistémique", "html": "Le contenu propositionnel n’est ni explicitement retiré ni désavoué, tandis que le locuteur affiche une distance à l’égard de la force argumentative ou des conséquences qui pourraient lui être attribuées. Le rapprochement repose ainsi sur cette dissociation entre un contenu non retiré et une distance affichée vis-à-vis de sa force argumentative, ce qui constitue un argument fort en faveur de l’équivalence."}]}, {"n": 7, "title": "Rejet bref d’une proposition ou d’une position", "expr": [{"lang": "English", "text": "Nah"}, {"lang": "Ελληνικά", "text": "Μπα (« Nah »)"}], "blocks": [{"ax": "S", "label": "Sémantique", "html": "Les deux interjections présentent une correspondance sémantique très directe et expriment une réponse négative ou un rejet."}, {"ax": "P", "label": "Pragmatique", "html": "Elles réalisent un acte réactif de désaccord ou de refus, souvent sous une forme minimale, et peuvent servir de préface à une contre-position. Leur fonctionnement est fortement séquentiel : elles prennent pour cible un contenu immédiatement disponible dans le discours antérieur."}, {"ax": "E", "label": "Énonciatif / épistémique", "html": "La brièveté de l’interjection manifeste une prise en charge nette du rejet et laisse peu de place à la négociation. Le locuteur se positionne explicitement contre le contenu précédent, sans modalisation élaborée."}]}, {"n": 8, "title": "Pseudo-question reformulant la position de l’autre — rapprochement exploratoire", "expr": [{"lang": "English", "text": "so you suggest that…? / So you think that?"}, {"lang": "Ελληνικά", "text": "θέλεις να μας πεις…? (« Are you trying to tell us…? »)\nΔηλαδή τώρα… θέλεις να μας πεις;; (« So now you’re trying to tell us…? »)"}], "blocks": [{"ax": "S", "label": "Sémantique", "html": "Les formulations ne sont pas des traductions strictes, mais elles partagent un schéma interrogatif dans lequel une position est explicitement attribuée à l’interlocuteur."}, {"ax": "P", "label": "Pragmatique", "html": "L’interrogation fonctionne fréquemment comme une reformulation dialogique : le locuteur reprend, explicite ou radicalise ce que l’autre est supposé vouloir dire. Il peut s’agir d’une question rhétorique ou d’une demande de confirmation fortement orientée, servant moins à acquérir une information qu’à mettre à l’épreuve la position attribuée à l’interlocuteur."}, {"ax": "E", "label": "Énonciatif / épistémique", "html": "Le locuteur adopte une position interprétative à l’égard du discours de l’interlocuteur et lui attribue une position dont les termes ou les conséquences n’ont pas nécessairement été formulés explicitement par celui-ci. L’asymétrie en jeu concerne ainsi l’attribution de la position reformulée et la responsabilité qui en découle. Le rapprochement est plausible sur P et E, mais reste exploratoire."}]}, {"n": 9, "title": "Question rhétorique à réponse orientée — équivalence faible", "expr": [{"lang": "Français", "text": "Vous savez lire ?"}, {"lang": "English", "text": "Does anyone really believe that…? / Really?"}, {"lang": "Ελληνικά", "text": "Μπορεί κάποιος να είναι…? (« Can anyone be…? »)\nμήπως λες βλακείες; (« Are you perhaps talking nonsense? »)"}], "blocks": [{"ax": "S", "label": "Sémantique", "html": "Les contenus propositionnels et les cibles sont très différents ; la proximité sémantique est faible."}, {"ax": "P", "label": "Pragmatique", "html": "Le rapprochement repose seulement sur un fonctionnement interrogatif général : ces formes peuvent neutraliser la valeur informationnelle de la question et orienter fortement la réponse attendue. L’interrogation devient alors un acte indirect d’évaluation, de contestation ou de mise en cause. Cette propriété est toutefois trop générale pour établir à elle seule une équivalence forte."}, {"ax": "E", "label": "Énonciatif / épistémique", "html": "Le locuteur présente sa propre évaluation comme suffisamment évidente pour que la réponse soit en quelque sorte présupposée. Les formes divergent cependant quant à la cible de la disqualification — compétence de l’interlocuteur, crédibilité d’une proposition, absurdité d’un contenu — d’où le statut d’équivalence faible."}]}, {"n": 10, "title": "Cadrage métadiscursif d’une prise de position — équivalence faible", "expr": [{"lang": "English", "text": "[My] unpopular opinion"}, {"lang": "Ελληνικά", "text": "Ταπεινή μου γνώμη (« My humble opinion »)"}], "blocks": [{"ax": "S", "label": "Sémantique", "html": "Les deux expressions introduisent explicitement une opinion du locuteur, mais elles ne construisent pas la même caractérisation sémantique de cette opinion : unpopular la situe par rapport à une opinion majoritaire supposée, tandis que <em>Ταπεινή μου γνώμη</em> la qualifie sous le registre de la modestie."}, {"ax": "P", "label": "Pragmatique", "html": "Les deux formes fonctionnent comme des cadres métadiscursifs de la prise de position : elles précèdent ou accompagnent l’assertion et anticipent sa réception potentiellement problématique. Dans le cas de <em>Ταπεινή μου γνώμη</em>, ce cadrage peut en outre opérer comme une atténuation de l’assertion."}, {"ax": "E", "label": "Énonciatif / épistémique", "html": "Dans les deux cas, le locuteur se positionne explicitement à l’égard de sa propre opinion au moment où il l’énonce, mais les postures construites divergent. Avec <em>[My] unpopular opinion</em>, il se situe contre une doxa ou une opinion majoritaire présupposée (dissensus, marginalité revendiquée) ; avec <em>Ταπεινή μου γνώμη</em>, il construit une posture de modestie affichée à l’égard de son assertion. Cette modestie peut contextuellement fonctionner comme une pseudo-atténuation, mais ce fonctionnement ne doit pas être présupposé hors contexte."}]}]}, "en": {"intro": ["In this document, interlinguistic equivalence is not equated with translation equivalence. Two or more expressions may be compared even when their literal meanings differ, provided that their linguistic functioning shows sufficiently motivated convergences. The proposed correspondences are described along three complementary dimensions: semantic (S), pragmatic (P), and enunciative / epistemic (E). These dimensions are analytical axes rather than three cumulative conditions: an equivalence may be weak semantically but strong pragmatically and enunciatively.", "S — Semantic equivalence. This concerns the proximity of the lexical or propositional content of the expressions, as well as their possible belonging to the same notional domain. Translation identity is not required.", "P — Pragmatic and interactional equivalence. This concerns what the expression accomplishes within the discourse sequence. Where relevant, the analysis may draw on the speech act performed, presupposed, or anticipated; adjacency-pair structure; rhetorical questioning; reformulation; mitigation; and meta-pragmatic or meta-enunciative framing operations.", "E — Enunciative / epistemic profile. This concerns the speaker’s positioning toward their own utterance, others’ discourse, and the knowledge at stake: commitment, displayed disengagement, modalization, positioning in relation to a doxa, staging of ignorance or incomprehension, construction of obviousness, and asymmetry in access to knowledge.", "Polemical value is deliberately set aside at this stage. The immediate aim is to identify defensible interlinguistic correspondences on the basis of S, P, and E. The linguistic notions used below therefore do not constitute additional independent criteria; they serve to specify the mechanisms observed within these three axes."], "overview": {"intro_title": "Introduction: S–P–E Framework for Comparison", "title": "Overview of the Proposed Correspondences", "lead": "The table below summarizes the ten correspondences examined in the following sections. The proposed statuses are provisional: they are working hypotheses based on S–P–E convergences and will require collective validation.", "nb": "Note. The status summarizes the degree of correspondence proposed at this stage; it does not constitute final validation. For cluster 1, the correspondence with Τίποτα specifically concerns its use without a preceding expression of thanks.", "head": ["#", "Correspondence", "French", "English", "Greek", "Proposed status"], "rows": [["1", "Presupposed / projected thanks", "Ne me remercie[z] pas", "Thank me later", "Τίποτα (“You’re welcome / It’s nothing”)", "Strong pragmatic equivalence, under specific conditions"], ["2", "“Just a question” and distancing", "Je demande, c’est pour X", "Genuine question / just asking [for a friend]", "Ρωτάω έτσι (“just asking”)", "Partial equivalence / to be refined"], ["3", "Feigned incomprehension", "—", "I’m confused", "Εγώ απλά δεν κατανοώ (“I simply don’t understand”)", "Clear EN–EL equivalence"], ["4", "Feigned causal ignorance", "cf. après… on se demande", "Wondering why / Wonder why…", "γιατί άραγε; (“I wonder why?”)", "Clear EN–EL equivalence"], ["5", "Revelatory reformulation", "Traduction :", "Translation:", "—", "Strong FR–EN equivalence"], ["6", "Meta-enunciative disengagement", "Je dis ça, je dis rien", "Just saying", "—", "Strong FR–EN equivalence"], ["7", "Brief rejection", "—", "Nah", "Μπα (“Nah”)", "Clear EN–EL equivalence"], ["8", "Pseudo-question reformulating the other", "—", "so you suggest that…? / So you think that?", "θέλεις να μας πεις…? (“Are you trying to tell us…?”)", "Exploratory correspondence"], ["9", "Oriented rhetorical question", "Vous savez lire ?", "Does anyone really believe that…? / Really?", "Μπορεί κάποιος να είναι…? (“Can anyone be…?”) / μήπως λες βλακείες; (“Are you perhaps talking nonsense?”)", "Weak equivalence"], ["10", "Metadiscursive framing of an opinion", "—", "[My] unpopular opinion", "Ταπεινή μου γνώμη (“My humble opinion”)", "Weak / exploratory equivalence"]]}, "clusters": [{"n": 1, "title": "Anticipated, Projected, or Presupposed Thanks", "expr": [{"lang": "French", "text": "Ne me remercie[z] pas"}, {"lang": "English", "text": "Thank me later"}, {"lang": "Greek", "text": "Τίποτα (“You’re welcome / It’s nothing”)"}], "blocks": [{"ax": "S", "label": "Semantic", "html": "The three expressions are not literal translations. <em>Ne me remerciez pas</em> is a negative directive, <em>Thank me later</em> projects thanks into the future, while <em>Τίποτα</em> conventionally functions as a response to thanks (“you’re welcome / it’s nothing”). They nevertheless belong to the same interactional domain of gratitude."}, {"ax": "P", "label": "Pragmatic", "html": "Two uses of Greek <em>Τίποτα</em> must be distinguished here. In its ordinary use, it responds to thanks that have already been expressed. When it is produced without any preceding thanks, however, it anticipates the response that would normally follow that speech act. Only this second use is considered here."}, {"ax": "", "label": "", "html": "In this case, <em>Τίποτα</em> pragmatically presupposes the relevance of an unrealized act of thanking. <em>Ne me remerciez pas</em> likewise anticipates potential thanks, while <em>Thank me later</em> projects their future realization. The three forms thus converge in presupposing, anticipating, or projecting an act of thanking, despite different interactional realizations."}, {"ax": "E", "label": "Enunciative / epistemic", "html": "In this configuration, the speaker presents themself as having provided – or as being about to provide – a contribution that would deserve the interlocutor’s gratitude. In the uses considered here, that contribution may consist of knowledge, information, or expertise, thereby constructing an epistemic asymmetry between participants. The correspondence with <em>Τίποτα</em> specifically concerns this use without preceding thanks."}]}, {"n": 2, "title": "A Question Presented as “Just a Question” and Distancing", "expr": [{"lang": "French", "text": "Je demande, c’est pour X / [Question], c’est pour X"}, {"lang": "English", "text": "Genuine question / just asking [for a friend]"}, {"lang": "Greek", "text": "Ρωτάω έτσι (“just asking”)"}], "blocks": [{"ax": "S", "label": "Semantic", "html": "The formulations converge around the activity of questioning, but distancing is not lexicalized in the same way. The semantic correspondence is therefore partial."}, {"ax": "P", "label": "Pragmatic", "html": "These expressions function as meta-pragmatic framings of the interrogative act: the question remains an interrogative act, but its interactional status is explicitly reframed. With <em>c’est pour X</em> / <em>for a friend</em>, the question is presented as motivated by somebody else’s interest; <em>Genuine question</em> presents it as information-seeking rather than, for example, as a rhetorical question or a challenge. The kind of reframing performed by the other variants (<em>Je demande</em>, <em>just asking</em>, <em>Ρωτάω έτσι</em>) remains to be specified."}, {"ax": "E", "label": "Enunciative / epistemic", "html": "The common point is not necessarily disengagement, but the explicit management of the speaker’s stance toward their own question. With <em>c’est pour X</em> / <em>for a friend</em>, the speaker displays distance from the motivation and/or implications of the question; with <em>Genuine question</em>, the speaker displays or claims an information-seeking stance."}]}, {"n": 3, "title": "Feigned Incomprehension", "expr": [{"lang": "English", "text": "I’m confused"}, {"lang": "Greek", "text": "Εγώ απλά δεν κατανοώ (“I simply don’t understand”)"}], "blocks": [{"ax": "S", "label": "Semantic", "html": "The two expressions are semantically very close: both explicitly state a condition of non-understanding."}, {"ax": "P", "label": "Pragmatic", "html": "In the uses considered here, the assertion of incomprehension can function as an indirect act of contestation. Rather than genuinely requesting an explanation, the speaker stages an inability to understand in order to present the targeted discourse or situation as incoherent, absurd, or difficult to justify. It is therefore a form of feigned incomprehension whose interactional value exceeds the literal content."}, {"ax": "E", "label": "Enunciative / epistemic", "html": "The speaker displays an epistemic deficit — “I don’t understand” — while implying that they in fact hold a critical assessment of the situation. The profile thus relies on a dissociation between the displayed epistemic state and the implicit stance: declared ignorance can strengthen, rather than weaken, the speaker’s evaluation."}]}, {"n": 4, "title": "Feigned Causal Ignorance: “I wonder why”", "expr": [{"lang": "English", "text": "Wondering why / Wonder why…"}, {"lang": "Greek", "text": "γιατί άραγε; (“I wonder why?”)"}], "blocks": [{"ax": "S", "label": "Semantic", "html": "The English and Greek forms converge directly in expressing a causal question."}, {"ax": "P", "label": "Pragmatic", "html": "The question can function as a rhetorical question or pseudo-question. The interrogative act is then not primarily aimed at obtaining information; it stages a search for a cause whose answer is already oriented, or even treated as obvious by the speaker."}, {"ax": "E", "label": "Enunciative / epistemic", "html": "The speaker constructs surface uncertainty while presupposing or suggesting privileged access to the relevant explanation. This feigned ignorance rests on a mismatch between interrogative modalization and implicit epistemic certainty."}, {"ax": "CF", "label": "Cf. French", "html": "<em>après il/elle/on se demande [pourquoi…]</em> is functionally related but is not treated here as a direct equivalent. The French construction typically attributes the questioning to a third party and ironically highlights that person’s blindness to a causal relation presented as obvious, whereas the English and Greek forms stage the speaker’s own questioning."}]}, {"n": 5, "title": "Revelatory Reformulation of Another’s Discourse", "expr": [{"lang": "French", "text": "Traduction :"}, {"lang": "English", "text": "Translation:"}], "blocks": [{"ax": "S", "label": "Semantic", "html": "The lexical and constructional correspondence between the two expressions is direct."}, {"ax": "P", "label": "Pragmatic", "html": "In the uses considered here, <em>Traduction</em> / <em>Translation</em> does not necessarily refer to an interlinguistic operation. The marker introduces a metadiscursive reformulation of another person’s discourse, presented as making explicit its real meaning, intention, or implication. Reformulation thus acquires a revelatory function."}, {"ax": "E", "label": "Enunciative / epistemic", "html": "The speaker adopts an interpretive position of superiority and claims hermeneutic authority: they present themselves as able to access the “true” meaning beyond the initial formulation, sometimes better than its declared author. Convergences across S, P, and E are particularly strong here."}]}, {"n": 6, "title": "Meta-enunciative Disengagement after Taking a Position", "expr": [{"lang": "French", "text": "Je dis ça, je dis rien"}, {"lang": "English", "text": "Just saying"}], "blocks": [{"ax": "S", "label": "Semantic", "html": "The two expressions are not strictly synonymous. The French formula explicitly lexicalizes a tension between saying and not saying, whereas the English form retrospectively reduces the intervention to “just saying.” They nevertheless share a metalinguistic domain centered on the activity of saying."}, {"ax": "P", "label": "Pragmatic", "html": "Both forms function retrospectively as comments on the preceding utterance. They reframe its interactional force by presenting the intervention as a simple observation or “just saying,” which can attenuate its confrontational or argumentative force without withdrawing the proposition itself."}, {"ax": "E", "label": "Enunciative / epistemic", "html": "The propositional content is not explicitly retracted or disavowed, while the speaker displays distance from the argumentative force or consequences that could be attributed to it. The correspondence therefore rests on this dissociation between content that is not retracted and displayed distance from its argumentative force, which provides a strong argument for the equivalence."}]}, {"n": 7, "title": "Brief Rejection of a Proposition or Position", "expr": [{"lang": "English", "text": "Nah"}, {"lang": "Greek", "text": "Μπα (“Nah”)"}], "blocks": [{"ax": "S", "label": "Semantic", "html": "The two interjections display a very direct semantic correspondence and express a negative response or rejection."}, {"ax": "P", "label": "Pragmatic", "html": "They perform a reactive act of disagreement or refusal, often in minimal form, and can serve as a preface to a counter-position. Their functioning is strongly sequential: they target content that is immediately available in the preceding discourse."}, {"ax": "E", "label": "Enunciative / epistemic", "html": "The brevity of the interjection signals clear commitment to the rejection and leaves little room for negotiation. The speaker explicitly positions themselves against the preceding content, without elaborate modalization."}]}, {"n": 8, "title": "Pseudo-question Reformulating the Other’s Position — Exploratory Correspondence", "expr": [{"lang": "English", "text": "so you suggest that…? / So you think that?"}, {"lang": "Greek", "text": "θέλεις να μας πεις…? (“Are you trying to tell us…?”)\nΔηλαδή τώρα… θέλεις να μας πεις;; (“So now you’re trying to tell us…?”)"}], "blocks": [{"ax": "S", "label": "Semantic", "html": "The formulations are not strict translations, but they share an interrogative pattern in which a position is explicitly attributed to the interlocutor."}, {"ax": "P", "label": "Pragmatic", "html": "The question frequently functions as dialogic reformulation: the speaker repeats, makes explicit, or radicalizes what the other person is taken to mean. It may function as a rhetorical question or a strongly oriented request for confirmation, serving less to obtain information than to put the attributed position to the test."}, {"ax": "E", "label": "Enunciative / epistemic", "html": "The speaker adopts an interpretive position toward the interlocutor’s discourse and attributes to the interlocutor a position whose full terms or consequences may not have been explicitly formulated by that interlocutor. The relevant asymmetry therefore concerns attribution of, and responsibility for, the reformulated position. The correspondence is plausible on P and E but remains exploratory."}]}, {"n": 9, "title": "Rhetorical Question with an Oriented Answer — Weak Equivalence", "expr": [{"lang": "French", "text": "Vous savez lire ?"}, {"lang": "English", "text": "Does anyone really believe that…? / Really?"}, {"lang": "Greek", "text": "Μπορεί κάποιος να είναι…? (“Can anyone be…?”)\nμήπως λες βλακείες; (“Are you perhaps talking nonsense?”)"}], "blocks": [{"ax": "S", "label": "Semantic", "html": "The propositional contents and targets differ substantially; semantic proximity is weak."}, {"ax": "P", "label": "Pragmatic", "html": "The correspondence rests only on a general interrogative functioning: these forms can neutralize the information-seeking value of the question and strongly orient the expected answer. The question then becomes an indirect act of evaluation, contestation, or challenge. This property is nevertheless too general to establish a strong equivalence on its own."}, {"ax": "E", "label": "Enunciative / epistemic", "html": "The speaker presents their own evaluation as sufficiently obvious for the answer to be, in a sense, presupposed. The forms nevertheless differ in the target of disqualification — the interlocutor’s competence, the credibility of a proposition, or the absurdity of a content — hence the status of weak equivalence."}]}, {"n": 10, "title": "Metadiscursive Framing of a Position — Weak Equivalence", "expr": [{"lang": "English", "text": "[My] unpopular opinion"}, {"lang": "Greek", "text": "Ταπεινή μου γνώμη (“My humble opinion”)"}], "blocks": [{"ax": "S", "label": "Semantic", "html": "The two expressions explicitly introduce the speaker’s opinion, but they do not construct the same semantic characterization of that opinion: <em>unpopular</em> positions it relative to a presumed majority view, whereas <em>Ταπεινή μου γνώμη</em> characterizes it through a register of modesty."}, {"ax": "P", "label": "Pragmatic", "html": "Both forms function as metadiscursive frames for taking a position: they precede or accompany the assertion and anticipate its potentially problematic reception. In the case of <em>Ταπεινή μου γνώμη</em>, this framing may additionally operate as mitigation of the assertion."}, {"ax": "E", "label": "Enunciative / epistemic", "html": "In both cases, the speaker explicitly positions themself toward their own opinion at the very moment of expressing it, but the stances constructed differ. With <em>[My] unpopular opinion</em>, the speaker positions themself against a presupposed doxa or majority view (claimed dissent or marginality); with <em>Ταπεινή μου γνώμη</em>, the speaker constructs a stance of displayed modesty toward their assertion. This modesty may contextually function as pseudo-mitigation, but such a reading should not be presupposed without contextual evidence."}]}]}};        // FR + EN versions of the working document (expressions kept in the original language)
+const UNPAIRED = [{"id": "U-FR-01", "lang": "fr", "expr": "Tout le monde sait", "tr": "Everybody knows", "ex": "Tout le monde sait qui a brûlé le collège, les voitures, c'est totalement signé.", "extr": "Everybody knows who burned down the school, the cars — it's totally signed [i.e. obvious who did it].", "draft": true}, {"id": "U-FR-02", "lang": "fr", "expr": "[Dans] la France de Macron / la France à Macron", "tr": "[In] Macron's France", "ex": "", "extr": "", "draft": true}, {"id": "U-FR-03", "lang": "fr", "expr": "Ces gens-là", "tr": "Those people", "ex": "Des Français•es tellement racistes qui sont capables de chier sur leur propre équipe de football car il y a des noirs et des arabes. \nCes gens-là détestent la France. \nMon dégoût et la haine envers les racistes est au max.", "extr": "French people so racist they're capable of shitting on their own football team because there are Black and Arab players.\nThose people hate France.\nMy disgust and hatred towards racists is at its peak.", "draft": true}, {"id": "U-FR-04", "lang": "fr", "expr": "après il/elle/on se demande [pourquoi…] (cf. cluster 4)", "tr": "And then he/she/one wonders [why…]", "ex": "JonLuk la girouette sur tous les sujets...\nEt après il se demande pourquoi il se rétame à toutes les élections", "extr": "JonLuk, the weathervane on every subject…\nAnd then he wonders why he flops at every election", "draft": true}, {"id": "U-FR-05", "lang": "fr", "expr": "Merci mais non merci", "tr": "Thanks but no thanks", "ex": "C'est une proposition ou une invitation [émoji pensif] merci mais non merci [émoji ennuyé] en commentaire à l'annonce du livre [Tous derrière moi]", "extr": "Is it a proposal or an invitation [thinking emoji] thanks but no thanks [annoyed emoji] — commenting on the announcement of the book [Tous derrière moi]", "draft": true}, {"id": "U-FR-06", "lang": "fr", "expr": "Chiale", "tr": "Cry [about it] (imperative of colloquial 'chialer', to cry)", "ex": "Tes derniers tweets c'est [le même sujet qui est reproché aux autres]. Chiale", "extr": "Your latest tweets are [the very thing others are criticised for]. Cry about it", "draft": true}, {"id": "U-FR-07", "lang": "fr", "expr": "le choc des cultures", "tr": "The clash of cultures / culture clash", "ex": "échange retranscrit des commentaires sur compte IG d'utilisateur [OP] nicolas_ptk au sujet du harcèlement dans les transports : cheretloire2026: \"Le choc des cultures non ?!!\" [OP @ cheretloire2026]: \"mais wtf ?! Vous avez vraiment un problème certains ! JE RÉPÈTE CETAIT UN HOMME BLANC CIS DE 40 ANS OH\nles médias de Bolloré (et pas que) vous font vriller ma parole\" [R de cheretloire] : \"quelle agressivité ! Tu as bu ou quoi ? Le choc culturel tu ne sais pas ce que c’est ? Réfléchis avant de t’emporter bêtement !\" [réponse d'utilisateur @ cheretloire] : \"nan tu fais une allusion raciste, fais pas l'ignorant\" [utilisateurs divers] : \"TG LE BOT DE 💩\" \"on il a raison t’a juste des propos racistes mais oklm 🤡\" \"ta fait une allusion raciste et tout le monde la vue\" [utilisateur @ OP] : \"te fais pas suer bro, c'est un bot faut juste le signaler\"", "extr": "Transcribed Instagram comment thread (account of user [OP] nicolas_ptk, about harassment on public transport): cheretloire2026: \"Culture clash, no?!!\" [OP @cheretloire2026]: \"wtf?! Some of you really have a problem! I REPEAT IT WAS A 40-YEAR-OLD CIS WHITE MAN OH\nBolloré's media (and not only them) are really driving you crazy, I swear\" [reply from cheretloire]: \"what aggressiveness! Have you been drinking or what? You don't know what culture shock is? Think before flying off the handle stupidly!\" [user @cheretloire]: \"nah you're making a racist allusion, don't play dumb\" [various users]: \"STFU YOU 💩 BOT\" \"yeah he's right, you're just saying racist stuff but whatever 🤡\" \"you made a racist allusion and everyone saw it\" [user @OP]: \"don't sweat it bro, it's a bot, just report it\"", "draft": true}, {"id": "U-FR-08", "lang": "fr", "expr": "comme par hasard", "tr": "As if by chance (≈ 'go figure')", "ex": "Y’a toujours un vendu de merde dans ce genre de situation et comme par hasard faut qu’il vienne de chez nous", "extr": "There's always some damn sellout in this kind of situation and, as if by chance, he has to come from our side", "draft": true}, {"id": "U-FR-09", "lang": "fr", "expr": "J’ai qu’une envie", "tr": "I only have one wish / All I want", "ex": "J'ai qu'une envie c'est de dormir une semaine d'affilée, qu'on me réveille et qu'on me dise que tout est rentré dans l'ordre.", "extr": "All I want is to sleep for a week straight, then have someone wake me up and tell me everything's back to normal.", "draft": true}, {"id": "U-FR-10", "lang": "fr", "expr": "Une chose à dire / Qu’une chose à dire / Juste une chose à dire", "tr": "One thing to say / Only one thing to say / Just one thing to say", "ex": "Une chose à dire : merci le photographe de Reuters pour cette photo de Hollande\nQu'une chose à dire. Allez le LOSC.\nJuste une chose à dire \"V for Victory\"", "extr": "One thing to say: thanks to the Reuters photographer for this photo of Hollande\nOnly one thing to say. Go LOSC.\nJust one thing to say: \"V for Victory\"", "draft": true}, {"id": "U-EN-01", "lang": "en", "expr": "To be fair", "tr": "", "ex": "To be fair: the French have a long history of creating barricades, lighting shit on fire, screaming for revolution and you know… killing the people in charge. So maybe this is the heartwarming story of two cultures finding common ground.", "extr": "", "draft": false}, {"id": "U-EN-02", "lang": "en", "expr": "I mean", "tr": "", "ex": "I mean, she ain't wrong....", "extr": "", "draft": false}, {"id": "U-EN-03", "lang": "en", "expr": "[X] has left the chat", "tr": "", "ex": "Punctuation has left the chat; Common sense has left the chat", "extr": "", "draft": false}, {"id": "U-EN-04", "lang": "en", "expr": "Is [X] in the room with us right now?", "tr": "", "ex": "Are the gains in the room with us right now?", "extr": "", "draft": false}, {"id": "U-EN-05", "lang": "en", "expr": "[X] called, they want their [Y] back", "tr": "", "ex": "The 1950s called, they want their gender roles back; 2009 called, they want their meme back", "extr": "", "draft": false}, {"id": "U-EN-06", "lang": "en", "expr": "I’ll wait / Go ahead, I’ll wait / Change my mind", "tr": "", "ex": "Name one policy that worked. I'll wait.\n-, so when will you be adopting these families into your home? Go ahead I'll wait.\nHot take: pineapple belongs on pizza. Change my mind.", "extr": "", "draft": false}, {"id": "U-EN-07", "lang": "en", "expr": "Color me surprised", "tr": "", "ex": "", "extr": "", "draft": false}, {"id": "U-EN-08", "lang": "en", "expr": "Chat,", "tr": "", "ex": "", "extr": "", "draft": false}, {"id": "U-EN-09", "lang": "en", "expr": "And they say", "tr": "", "ex": "And they say women can't be sexist", "extr": "", "draft": false}, {"id": "U-EN-10", "lang": "en", "expr": "Please stop", "tr": "", "ex": "Please stop saying \"in the West\":", "extr": "", "draft": false}, {"id": "U-EN-11", "lang": "en", "expr": "Thoughts?", "tr": "", "ex": "Should a man raise hand against a women 🤔\nThoughts?", "extr": "", "draft": false}, {"id": "U-EN-12", "lang": "en", "expr": "Is OOOO real?", "tr": "", "ex": "how is any of this real? we’re a fucking cartoon. 😅\nQuote\nRussell Brand\n@rustyrockets\n·\nDec 11, 2024\nDonald Trump has picked my friend @kimguilfoyle to serve as US ambassador to Greece.\nCongrats, Kimberly!", "extr": "", "draft": false}, {"id": "U-EN-13", "lang": "en", "expr": "Respectfully", "tr": "", "ex": "Respectfully, its not \"pretend\" to say the DCU makes money. It's factual.\nSuperman made $125-$150m profit and is flying on streaming, Clayface looks set to make a profit of $50-$100m if the previews are accurate. \nLanterns is the third most watched first season in HBO history", "extr": "", "draft": false}, {"id": "U-EN-14", "lang": "en", "expr": "with all due respect", "tr": "", "ex": "With all due respect and without any ill intentions, YOU acted arrogantly and demandingly. People were certainly speaking out and asking for respect. What I can suggest, peacefully, is that you let this go. You have already caused enough damage without also demanding an apology.", "extr": "", "draft": false}, {"id": "U-EN-15", "lang": "en", "expr": "Impressive, but", "tr": "", "ex": "Impressive....but you are not a Jedi yet.", "extr": "", "draft": false}, {"id": "U-EN-16", "lang": "en", "expr": "Oh by the way", "tr": "", "ex": "Oh by the way, I'm a law student", "extr": "", "draft": false}, {"id": "U-EN-17", "lang": "en", "expr": "Here, I’ll help you", "tr": "", "ex": ". Let me ask you, dear: since when is islam a 'race'? Here, I'll help you:", "extr": "", "draft": false}, {"id": "U-EN-18", "lang": "en", "expr": "let me ask you", "tr": "", "ex": "Let me ask you this, if you can't block how can you run the ball or throw the ball or play calls?", "extr": "", "draft": false}, {"id": "U-EN-19", "lang": "en", "expr": "Yeh ok", "tr": "", "ex": "- That forsake refuge, then swarm across Europe hunting for a free life? Yeh ok.", "extr": "", "draft": false}, {"id": "U-EN-20", "lang": "en", "expr": "Yeah right!", "tr": "", "ex": "- . I hope corbyn and Co can house some in their homes? Yeah right!", "extr": "", "draft": false}, {"id": "U-EN-21", "lang": "en", "expr": "Well", "tr": "", "ex": "Well, most of those countries are undemocratically led", "extr": "", "draft": false}, {"id": "U-EN-22", "lang": "en", "expr": "Because…", "tr": "", "ex": "Because Chritians are looking after each other? Good one!", "extr": "", "draft": false}, {"id": "U-EN-23", "lang": "en", "expr": "Good one!", "tr": "", "ex": "Because Chritians are looking after each other? Good one!", "extr": "", "draft": false}, {"id": "U-EN-24", "lang": "en", "expr": "You heard it here folks", "tr": "", "ex": "You heard it here folks...Europe is been invaded", "extr": "", "draft": false}, {"id": "U-EN-25", "lang": "en", "expr": "No dear", "tr": "", "ex": "no dear, the western society is not that islamic mess that's the middle east", "extr": "", "draft": false}, {"id": "U-EN-26", "lang": "en", "expr": "lol, not watching the news?", "tr": "", "ex": "lol - you not been watching the news then? Germany shut their border when they couldn't cope!! Hungary have arrested at least one confirmed terrorist on their border", "extr": "", "draft": false}, {"id": "U-EN-27", "lang": "en", "expr": "And I ask again", "tr": "", "ex": "And I ask again, what are you doing as a person, or a country, to help?", "extr": "", "draft": false}, {"id": "U-EN-28", "lang": "en", "expr": "Nonsense", "tr": "", "ex": "Nonsense, I love the certain irony of an economic migrant defending the fact that their country is denying another economic migrant", "extr": "", "draft": false}, {"id": "U-EN-29", "lang": "en", "expr": "Which means?", "tr": "", "ex": "Which means no border control and no obligation of EU law?...If we tolerate this behaviour of not respecting EU law how are we going to integrate people and asking them to respect our law?", "extr": "", "draft": false}, {"id": "U-EN-30", "lang": "en", "expr": "And it is ok?", "tr": "", "ex": "And it is ok to pass through any countries they like? If we tolerate this behaviour of not respecting EU law how are we going to integrate people and asking them to respect our law?", "extr": "", "draft": false}, {"id": "U-EN-31", "lang": "en", "expr": "Shocker", "tr": "", "ex": "Shocker, another UKIP supporter who can neither spell nor use punctuation correctly. Putting the word 'islamist' in capital letters does not make it true", "extr": "", "draft": false}, {"id": "U-EN-32", "lang": "en", "expr": "Although I feel for them", "tr": "", "ex": "Although I feel for them, they ought to go through the proper channels. The UN ought to supply more staff and police the refugee camps for safety", "extr": "", "draft": false}, {"id": "U-EN-33", "lang": "en", "expr": "I know… but why?", "tr": "", "ex": "I know someone will think this is racist, but why can't they just leave Europe for the Whites?", "extr": "", "draft": false}, {"id": "U-EN-34", "lang": "en", "expr": "You know what I mean", "tr": "", "ex": "Hungary must respond the same as Israel do to Palestinians....., you know what I mean, without compassion.", "extr": "", "draft": false}, {"id": "U-EN-35", "lang": "en", "expr": "Ok if that’s true why?", "tr": "", "ex": "Ok if thats true why is it not mentioned on the News?", "extr": "", "draft": false}, {"id": "U-EN-36", "lang": "en", "expr": "Haha oh boy", "tr": "", "ex": "Haha oh boy. So much garbage written. You won't even acknowledge that liberal fascism exists?", "extr": "", "draft": false}, {"id": "U-EN-37", "lang": "en", "expr": "and please", "tr": "", "ex": "and please, you want to bring Germany and history into this", "extr": "", "draft": false}, {"id": "U-EN-38", "lang": "en", "expr": "Oh yeah / Oh wait", "tr": "", "ex": "Oh yeah the money and so called prospects\nDon't worry everyone. Donald Trump was just joking when he said Iran should take out Los Angeles and San Diego.\nHe'd never actually condone attacking the United States of America.\nOh wait.", "extr": "", "draft": false}, {"id": "U-EL-01", "lang": "el", "expr": "Υ.Γ… (P.S.)", "tr": "P.S...", "ex": "Υ.Γ. Άνοιξε πολλά η γλωσσούδα σας κάποιοι που πιαστήκατε τα κορόιδα του πογκολινου", "extr": "P.S. Some of you who got taken in by the pangolin guy have really loosened your tongues now.", "draft": false}, {"id": "U-EL-02", "lang": "el", "expr": "Ναι, αλλά…", "tr": "Yes, but...", "ex": "Ναι αλλά τουλάχιστον αυτοί ζουνε, όχι σαν τους ανεμβολιαστους που έχουν πεθάνει όλοι!", "extr": "Yes, but at least they're alive — unlike the unvaccinated, who have all died!", "draft": false}, {"id": "U-EL-03", "lang": "el", "expr": "Μα καλά…", "tr": "But really...", "ex": "Μα καλα, θα δικασουμε μια ωραια και εντυπωσιακη γυναικα μονο και μονο για κατι ψωροεκρηκτικα", "extr": "But really, are we going to put a beautiful and impressive woman on trial just for some measly little explosives?", "draft": false}, {"id": "U-EL-04", "lang": "el", "expr": "Α, ναι!", "tr": "Oh, yes!", "ex": "Α, ναι! Το καθεστως που επεβαλλαν με το #Metoo ωστε να προφυλακιζονται ανδρες ανευ στοιχειων με προφορικες καταγγελιες", "extr": "Oh, right! The regime imposed under #MeToo, whereby men were remanded in custody without evidence, on the basis of verbal accusations", "draft": false}, {"id": "U-EL-05", "lang": "el", "expr": "Ε, ναι", "tr": "Well, yes", "ex": "Ε, ναι, αυτοι εδω σου λενε οτι εχουν 'τοξικη αρρενωποτητα' και οτι η 'πατριαρχια σκοτωνει'", "extr": "Well, yes — these people here tell you they have 'toxic masculinity' and that 'patriarchy kills'", "draft": false}, {"id": "U-EL-06", "lang": "el", "expr": "Θα ήθελα να ήξερα", "tr": "I would like to know....", "ex": "Θα ήθελα να ήξερα αν υπάρχει γονιός που θα καλοδεχτεί την ευχή “Εύχομαι με το καλό ο γιος σας να γινει ομοφυλόφιλος ή τραβεστί όταν μεγαλώσει.”", "extr": "I would like to know if there is a parent who would happily welcome the wish: ‘I sincerely hope your son grows up to become homosexual or a transvestite.", "draft": false}, {"id": "U-EL-07", "lang": "el", "expr": "ΓΙΑΤΊΙΙΙΙΙ;", "tr": "WHYYYYYY?", "ex": "Εθνικές σημαίες κρατών,,, συμπορεύονται με σημαία,,,,, σεξουαλικών προτιμήσεων,,, ΓΙΑΤΊΙΙΙΙΙ;;;;;;;;;;", "extr": "National flags of countries marching together with a flag of sexual preferences — WHYYYYY", "draft": false}, {"id": "U-EL-08", "lang": "el", "expr": "Από πότε…?", "tr": "Since when...?", "ex": "Από πότε έγιναν κοινωνικά αποδεκτά αυτά τα ξεφτυλικια;", "extr": "Since when did these disgraceful/shameless acts become socially acceptable?", "draft": false}, {"id": "U-EL-09", "lang": "el", "expr": "Το βρήκε…", "tr": "He's found it....", "ex": "Το βρήκε ο Λύτρας!", "extr": "He's found it — Lytras has!", "draft": false}, {"id": "U-EL-10", "lang": "el", "expr": "άσε", "tr": "Never mind...", "ex": "ασε, μεγαλη πικρα αυτη η μεταναστευση", "extr": "never mind, this migration business is such bitterness (such a bitter pill)", "draft": false}, {"id": "U-EL-11", "lang": "el", "expr": "άρα? τι λέτε", "tr": "so? what do you say...", "ex": "Και εφοσον η ακροδεξια τα παει πολυ καλυτερα σε μεταναστευτικο ασφαλεια κτλ ..αρα?τι λετε να ψηφισουμε¨?", "extr": "And since the far right does so much better on immigration, security, etc... so, who do you say we vote for?", "draft": false}, {"id": "U-EL-12", "lang": "el", "expr": "Ω συγνώμη", "tr": "Oh sorry", "ex": "Ω συγνωμη εννοουσα τη 'νομιμη μεταναστευση' εντος ΕΕ.", "extr": "Oh, sorry — I meant ‘legal migration’ within the EU.", "draft": false}, {"id": "U-EL-13", "lang": "el", "expr": "ψωροεκρηκτικά", "tr": "measly little explosives", "ex": "Μα καλα, θα δικασουμε μια ωραια και εντυπωσιακη γυναικα μονο και μονο για κατι ψωροεκρηκτικα", "extr": "But really, are we going to put a beautiful and impressive woman on trial just for some measly little explosives?", "draft": false}, {"id": "U-EL-14", "lang": "el", "expr": "γλωσσούδα", "tr": "Chatterbox", "ex": "Υ.Γ. Άνοιξε πολλά η γλωσσούδα σας κάποιοι που πιαστήκατε τα κορόιδα του πογκολινου", "extr": "P.S. Some of you who got taken in by the pangolin guy have really loosened your tongues now.", "draft": false}, {"id": "U-EL-15", "lang": "el", "expr": "Α καλά!", "tr": "Oh great!", "ex": "Α, καλά! Εδώ δεν την έπεσαν στον κόσμο, που διαμαρτυροτανε για τα εμβόλια", "extr": "Oh, great! As if they didn't tear into the people protesting vaccines..", "draft": false}, {"id": "U-EL-16", "lang": "el", "expr": "Καλό θα ήταν…", "tr": "It would be good...", "ex": "Καλό θα ήταν να αναδείξεις τον σκοτεινό ρόλο των ΜΚΟ(γιατροί χωρίς Σύνορα)σε αυτήν την περίπτωσ ηnn Δίκη τους εικασία ήταν ότι μια γυναίκα γέννησε μόνη της Έχει κενά η ιστορία τους", "extr": "It would be good if you highlighted the dark role of the NGOs (Doctors Without Borders) in this case. Their own guess/theory was that a woman gave birth alone. Their story has gaps.", "draft": false}, {"id": "U-EL-17", "lang": "el", "expr": "Λες και…", "tr": "As if...", "ex": "Λες και τραβούσαν κανένα ζόρι οι μπαχαλοι για τα κέρδη των φαρμακευτικών εταιρειών!", "extr": "As if the troublemakers were suffering any hardship for the profits of the pharmaceutical companies!", "draft": false}, {"id": "U-EL-18", "lang": "el", "expr": "Κι όλα αυτά… ε?", "tr": "And all this...huh?", "ex": "Κι ολα αυτα για μια μπλουζα τωρα, ε;", "extr": "And all this now over a t-shirt, huh? Unbelievable stuff", "draft": false}, {"id": "U-EL-19", "lang": "el", "expr": "Στην υγειά σας", "tr": "Cheers.", "ex": "Στην υγεια σας. You did this", "extr": "Cheers. You did this", "draft": false}, {"id": "U-EL-20", "lang": "el", "expr": "Να θυμίσουμε εδώ", "tr": "Let us remind here (again)", "ex": "Να υπενθυμισω πως και στην υποθεση παρανομης εμποριας βρεφων στα Χανια,", "extr": "Let me remind [you] that also in the case of illegal infant trafficking in Chania,", "draft": true}, {"id": "U-EL-21", "lang": "el", "expr": "Από τώρα… δεν είναι?", "tr": "already?....isn't it?", "ex": "Απο τωρα Καρναβαλια,νωρεις δεν ειναι;", "extr": "Isn't it early, Carnival season already?", "draft": false}, {"id": "U-EL-22", "lang": "el", "expr": "Πως εξηγείτε", "tr": "How do you explain", "ex": "Απο κάτω βλέπω μόνο κοριτσάκια. Πως εξηγείτε η λατρεία που έχουν για αυτούς;", "extr": "Below I only see little girls. How do you explain the adoration they have for them?", "draft": false}, {"id": "U-EL-23", "lang": "el", "expr": "Τι περπατάει λέει", "tr": "How is she saying she's walking like?", "ex": "Τι περπατάει λέει η μικρή Λουλού;;;;;; Λεβεντικα;;;; 😂 🤣 😂 🤣😂 🤣", "extr": "How is the little Loulou saying she's walking like? Manly? 😂 🤣 😂 🤣😂 🤣", "draft": false}, {"id": "U-EL-24", "lang": "el", "expr": "Μας ρωτήσατε?", "tr": "did you ask us?", "ex": "Εμάς, ως Έλληνες μας ρωτήσατε;", "extr": "Us, as Greeks, did you ask us?", "draft": false}, {"id": "U-EL-25", "lang": "el", "expr": "για ποιο λόγοοο", "tr": "for what reasooon", "ex": "Εγώ απλά δεν κατανοώ,για ποιο λόγοοο!!!!", "extr": "I simply don't understand, for what reasooon!!!!", "draft": false}, {"id": "U-EL-26", "lang": "el", "expr": "ποια η σχεσηηηη", "tr": "what's the connectiooooon", "ex": "Εθνικές σημαίες κρατών,,, συμπορεύονται με σημαία,,,,, σεξουαλικών προτιμήσεων,,, ΓΙΑΤΊΙΙΙΙΙ;;;;;;;;;;ποια η σχεσηηηη,,,που κολλάειιιιι;;;;;", "extr": "National flags of countries marching together with a flag of sexual preferences — WHYYYYY???????? What's the connection,,,what does that have to do with anything????", "draft": false}, {"id": "U-EL-27", "lang": "el", "expr": "που κολλάειιιιι", "tr": "What does that have to do with anything?", "ex": "Εθνικές σημαίες κρατών,,, συμπορεύονται με σημαία,,,,, σεξουαλικών προτιμήσεων,,, ΓΙΑΤΊΙΙΙΙΙ;;;;;;;;;;ποια η σχεσηηηη,,,που κολλάειιιιι;;;;;", "extr": "National flags of countries marching together with a flag of sexual preferences — WHYYYYY???????? What's the connection,,,what does that have to do with anything????", "draft": false}, {"id": "U-EL-28", "lang": "el", "expr": "Ooooo, τι να ναι…", "tr": "Oooo total nonsense...", "ex": "Τι σχέση έχει το γαλλικό ινστιτούτο με το pride? Ooooo,τι να ναι…", "extr": "What does the French institute have to do with pride? Oooo total nonsense...", "draft": false}, {"id": "U-EL-29", "lang": "el", "expr": "Υ.Γ Τώρα πείτε", "tr": "P.S, now tell us...", "ex": "Υ.Γ Τώρα πείτε και σε εμάς για ποιο ακριβώς πράγμα είσαστε περήφανοι", "extr": "P.S. Now tell us too — exactly what is it you're proud of?", "draft": false}, {"id": "U-EL-30", "lang": "el", "expr": "Δεν μας είπατε", "tr": "You didn't tell us...", "ex": "Δεν μας είπατε με τι τρόπο ζητε;;;;;", "extr": "You didn't tell us how you make a living;;;;;", "draft": false}, {"id": "U-EL-31", "lang": "el", "expr": "Α", "tr": "Ah", "ex": "Α τουτοι πρεπει ναν οι τρανς που τις Φιλιππίνες…😅", "extr": "Ah — these must be the trans people from the Philippines...😅", "draft": false}, {"id": "U-EL-32", "lang": "el", "expr": "Άσε με να μαντέψω", "tr": "let me guess", "ex": "Αφήστε με να μαντέψω τι ψηφίσατε τον Ιανουάριο: ΣΥΡΙΖΑ\". \"Σωστά.", "extr": "Let me guess what you voted for in January: SYRIZA.\" \"Right.", "draft": true}, {"id": "U-EL-33", "lang": "el", "expr": "‘νόμιμη μετανάστευση’", "tr": "‘ legal migration’", "ex": "Ω συγνωμη εννοουσα τη 'νομιμη μεταναστευση' εντος ΕΕ.", "extr": "Oh, sorry — I meant ‘legal migration’ within the EU.", "draft": false, "note": "Guillemets / scare quotes"}, {"id": "U-EL-34", "lang": "el", "expr": "Σε περίπτωση που δεν καταλάβατε", "tr": "In case you didn't understand", "ex": "Σε περιπτωση που δεν καταλαβατε τι λεει ο αρθρογραφος", "extr": "In case you didn't understand what the columnist is saying", "draft": true}];
+
+const T = {
+fr:{
+  eyebrow:"POLAR · Document de travail · FR / EN / ΕΛ",
+  h1:"Équivalences interlinguistiques : validation collective",
+  lede:"Merci de votre participation. Ce questionnaire présente dix rapprochements interlinguistiques proposés comme hypothèses de travail, puis une liste de marqueurs encore sans équivalent identifié.",
+  howTitle:"Comment répondre",
+  how:[
+    "<b>Partie 1 (1–10).</b> Lisez la description de chaque rapprochement, puis indiquez dans quelle mesure vous êtes d'accord avec cette équivalence (1 = pas du tout d'accord, 5 = tout à fait d'accord), ou choisissez « NSP » si vous ne savez pas. Un commentaire libre peut être ajouté.",
+    "<b>Partie 2.</b> Pour les marqueurs identifiés dans une seule langue, proposez si possible un équivalent couramment employé dans une autre langue.",
+    "<b>Aucune question n'est obligatoire</b> : laissez vide ce que vous ne savez pas."],
+  name:"Nom", namePh:"Prénom Nom", start:"Commencer →", nameErr:"Merci d'indiquer votre nom.",
+  toPart2:"Partie 2 ↓", speRem:"Rappel : S–P–E",
+  part1:"Partie 1", part1Title:"Rapprochements proposés",
+  clusterN:n=>`Rapprochement ${n}`,
+  vq:"Dans quelle mesure êtes-vous d'accord avec ce rapprochement ?",
+  lo:"1 · pas du tout d'accord", hi:"5 · tout à fait d'accord", nsp:"NSP (ne sais pas)", clear:"effacer",
+  comment:"Commentaire", optional:"(facultatif)",
+  part2:"Partie 2", part2Title:"Expressions sans équivalent identifié",
+  part2Intro:[
+    "Les marqueurs ci-dessous n'ont été identifiés que dans une seule langue. Pour chacun, consultez l'expression, sa traduction littérale en anglais, l'exemple et sa traduction anglaise. Si un équivalent couramment employé existe dans une autre langue, indiquez-le. Laissez vide si vous ne savez pas.",
+    "Les traductions marquées <span class=\"draft\" style=\"margin:0\">brouillon</span> sont provisoires et à vérifier."],
+  lang:{fr:"Français",en:"Anglais",el:"Grec"}, langIn:{fr:"en français",en:"en anglais",el:"en grec"},
+  markers:"marqueurs", filled:"rempli(s)", example:"Exemple", exampleEn:"Exemple (EN)", noEx:"Pas d'exemple dans la liste",
+  equiv:l=>`Équivalent ${l}`, draft:"brouillon",
+  general:"Commentaire général (facultatif)",
+  status:(v,n,p)=>`${v}/${n} votes · ${p} équivalent(s) proposé(s)`,
+  back:"← Retour", submit:"Envoyer", sending:s=>`Envoi en cours… (${s} s) — cela peut prendre quelques secondes. Merci de patienter jusqu'à l'affichage de l'écran de confirmation.`,
+  fail:e=>`Échec de l'envoi (${e}) — un fichier .csv va être téléchargé ; merci de l'envoyer par e-mail.`,
+  doneTitle:"Merci ! Vos réponses ont été envoyées.", download:"Télécharger une copie (.csv)"
+},
+en:{
+  eyebrow:"POLAR · Working document · FR / EN / ΕΛ",
+  h1:"Interlinguistic equivalences: collective validation",
+  lede:"Thank you for taking part. This questionnaire presents ten proposed interlinguistic correspondences as working hypotheses, followed by a list of markers for which no equivalent has been identified yet.",
+  howTitle:"How to answer",
+  how:[
+    "<b>Part 1 (1–10).</b> Read the description of each correspondence, then indicate to what extent you agree with the proposed equivalence (1 = strongly disagree, 5 = strongly agree), or choose “Don't know”. You may add a free comment.",
+    "<b>Part 2.</b> For markers identified in one language only, suggest a commonly used equivalent in another language if you know one.",
+    "<b>Nothing is mandatory</b>: leave blank anything you are unsure about."],
+  name:"Name", namePh:"First name Last name", start:"Start →", nameErr:"Please enter your name.",
+  toPart2:"Part 2 ↓", speRem:"Reminder: S–P–E",
+  part1:"Part 1", part1Title:"Proposed correspondences",
+  clusterN:n=>`Correspondence ${n}`,
+  vq:"To what extent do you agree with this correspondence?",
+  lo:"1 · strongly disagree", hi:"5 · strongly agree", nsp:"Don't know", clear:"clear",
+  comment:"Comment", optional:"(optional)",
+  part2:"Part 2", part2Title:"Expressions with no equivalent identified",
+  part2Intro:[
+    "The markers below have been identified in one language only. For each one, look at the expression, its literal English translation, the example and its English translation. If a commonly used equivalent exists in another language, write it down. Leave blank if you don't know.",
+    "Translations tagged <span class=\"draft\" style=\"margin:0\">draft</span> are provisional and still to be checked."],
+  lang:{fr:"French",en:"English",el:"Greek"}, langIn:{fr:"in French",en:"in English",el:"in Greek"},
+  markers:"markers", filled:"filled", example:"Example", exampleEn:"Example (EN)", noEx:"No example in the list",
+  equiv:l=>`Equivalent ${l}`, draft:"draft",
+  general:"General comment (optional)",
+  status:(v,n,p)=>`${v}/${n} votes · ${p} equivalent(s) suggested`,
+  back:"← Back", submit:"Submit", sending:s=>`Sending… (${s} s) — this may take a few seconds. Please wait until the confirmation screen appears.`,
+  fail:e=>`Submission failed (${e}) — a .csv file will be downloaded; please send it by e-mail.`,
+  doneTitle:"Thank you — your responses have been submitted.", download:"Download a copy (.csv)"
+}};
+const LANG_EN={fr:"French",en:"English",el:"Greek"};
+
+const $=s=>document.querySelector(s);
+const esc=s=>{const d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML;};
+const STORE="polar-equivalences-v2";
+let state={ui:null,name:"",sid:null,votes:{},comments:{},pairs:{},general:"",screen:"intro"};
+function load(){try{const s=JSON.parse(localStorage.getItem(STORE)||"null");if(s)state=Object.assign(state,s);}catch(e){}}
+function save(){try{localStorage.setItem(STORE,JSON.stringify(state));}catch(e){}}
+const L=()=>T[state.ui], DOC=()=>DOCS[state.ui];
+
+/* ---------- static texts ---------- */
+function speLine(h){const m=h.match(/^([SPE]) — ([^.]+)\.\s*([\s\S]*)$/);
+  return m?`<p><span class="axis ${m[1]}">${m[1]}</span><b>${m[2]}.</b> ${m[3]}</p>`:`<p>${h}</p>`;}
+function renderStatic(){
+  const t=L(); document.documentElement.lang=state.ui;
+  document.querySelectorAll("[data-t]").forEach(el=>{const v=t[el.dataset.t]; if(typeof v==="string") el.innerHTML=v;});
+  $("#name").placeholder=t.namePh;
+  $("#how").innerHTML=t.how.map(x=>`<p>${x}</p>`).join("");
+  // intro: doc paragraphs are pre-escaped; only <em> markup
+  $("#intro-text").innerHTML=`<h3 style="margin-bottom:12px">${esc(DOC().overview.intro_title)}</h3>`+DOC().intro.map(speLine).join("");
+  $("#spe-reminder").innerHTML=`<h3 style="margin-bottom:10px;font-size:17px">${t.speRem}</h3>`+DOC().intro.filter(p=>/^[SPE] — /.test(p)).map(speLine).join("");
+  $("#part2-intro").innerHTML=t.part2Intro.map(x=>`<p>${x}</p>`).join("");
+  document.querySelectorAll(".langsw button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.setlang===state.ui));
+}
+
+/* ---------- overview table ---------- */
+function overviewHTML(){
+  const O=DOC().overview, h=O.head;
+  const body=O.rows.map(r=>{const id="C"+String(r[0]).padStart(2,"0");
+    return `<tr><td class="n"><a href="#${id}">${esc(r[0])}</a></td><td class="ti">${esc(r[1])}</td>
+      <td class="x" data-l="${esc(h[2])}">${esc(r[2])}</td><td class="x" data-l="${esc(h[3])}">${esc(r[3])}</td>
+      <td class="x" data-l="${esc(h[4])}">${esc(r[4])}</td><td class="st" data-l="${esc(h[5])}">${esc(r[5])}</td></tr>`;}).join("");
+  return `<h3 style="margin-bottom:8px">${esc(O.title)}</h3><p style="margin:0;font-size:14.5px">${esc(O.lead)}</p>
+    <div class="ov-wrap"><table class="ov"><thead><tr>${h.map(x=>`<th>${esc(x)}</th>`).join("")}</tr></thead><tbody>${body}</tbody></table></div>
+    <p class="ov-nb">${esc(O.nb)}</p>`;
+}
+
+/* ---------- part 1: clusters ---------- */
+function clusterHTML(c){
+  const t=L(), id="C"+String(c.n).padStart(2,"0"), v=state.votes[id];
+  const ex=c.expr.map(e=>`<div class="ex-row"><span class="lg">${esc(e.lang)}</span><span class="tx">${esc(e.text)}</span></div>`).join("");
+  // b.html is pre-escaped document text whose only markup is <em> (italics from the .docx)
+  const blocks=c.blocks.map(b=>{
+    if(b.ax==="CF") return `<div class="cf"><b>${esc(b.label)}.</b> ${b.html}</div>`;
+    if(!b.ax) return `<div class="blk cont">${b.html}</div>`;
+    return `<div class="blk"><span class="axis ${b.ax}">${b.ax}</span><span class="lab">${esc(b.label)}.</span> ${b.html}</div>`;
+  }).join("");
+  const btn=[1,2,3,4,5].map(n=>`<input type="radio" id="${id}-${n}" name="${id}" value="${n}" ${v==n?"checked":""}><label for="${id}-${n}">${n}</label>`).join("");
+  return `<article class="cl anchor${v!==undefined?" voted":""}" id="${id}">
+    <div class="cl-head"><div class="cl-num">${t.clusterN(c.n)}</div><h2>${esc(c.title)}</h2><div class="exprs">${ex}</div></div>
+    <div class="analysis">${blocks}</div>
+    <div class="vote">
+      <div class="vq">${t.vq}</div>
+      <div class="opts">${btn}<span class="sep"></span>
+        <input type="radio" id="${id}-na" name="${id}" value="NA" ${v==="NA"?"checked":""}><label class="nsp" for="${id}-na">${t.nsp}</label>
+        <button type="button" class="clear" data-clear="${id}">${t.clear}</button></div>
+      <div class="ends"><span>${t.lo}</span><span>${t.hi}</span></div>
+      <div class="cm"><label for="${id}-cm">${t.comment} <span>${t.optional}</span></label>
+        <textarea id="${id}-cm" data-cm="${id}" placeholder="…">${esc(state.comments[id]||"")}</textarea></div>
+    </div></article>`;
+}
+
+/* ---------- part 2: markers without equivalent ---------- */
+function unpairedHTML(){
+  const t=L(), open=state.open||{};
+  return ["fr","en","el"].map(lg=>{
+    const items=UNPAIRED.filter(u=>u.lang===lg), others=["fr","en","el"].filter(x=>x!==lg);
+    const rows=items.map(u=>{
+      const p=state.pairs[u.id]||{};
+      const lit=u.lang==="en"?"":`<div class="lit">≈ ${esc(u.tr)}${u.draft&&u.lang==="fr"?`<span class="draft">${t.draft}</span>`:""}</div>`;
+      let ex;
+      if(!u.ex) ex=`<div class="noex">${t.noEx}</div>`;
+      else if(u.lang==="en") ex=`<div class="exbox single"><div><b>${t.example}</b>${esc(u.ex)}</div></div>`;
+      else ex=`<div class="exbox"><div><b>${t.example}</b>${esc(u.ex)}</div><div><b>${t.exampleEn}${u.draft?`<span class="draft">${t.draft}</span>`:""}</b>${esc(u.extr||"—")}</div></div>`;
+      const note=u.note?`<div class="lit">${esc(u.note)}</div>`:"";
+      const inputs=others.map(o=>`<div><label for="${u.id}-${o}">${t.equiv(t.langIn[o])}</label>
+        <input type="text" id="${u.id}-${o}" data-pair="${u.id}" data-to="${o}" value="${esc(p[o]||"")}" placeholder="—"></div>`).join("");
+      return `<div class="u${Object.values(p).some(x=>x&&x.trim())?" filled":""}"><div class="uid">${u.id}</div>
+        <div class="expr">${esc(u.expr)}</div>${lit}${note}${ex}<div class="pairs">${inputs}</div></div>`;
+    }).join("");
+    return `<details class="lang-group" data-lg="${lg}" ${open[lg]?"open":""}><summary><span><h3>${t.lang[lg]}</h3> <span class="meta">· ${items.length} ${t.markers}</span></span>
+      <span class="meta"><span data-filled="${lg}">0</span> ${t.filled} <span class="chev">›</span></span></summary>
+      <div class="items">${rows}</div></details>`;
+  }).join("");
+}
+
+/* ---------- render ---------- */
+function renderSurvey(){
+  $("#who").textContent=state.name;
+  $("#overview").innerHTML=overviewHTML();
+  $("#clusters").innerHTML=DOC().clusters.map(clusterHTML).join("");
+  $("#unpaired").innerHTML=unpairedHTML();
+  $("#general").value=state.general||"";
+  updateProgress();
+}
+function setLang(lg){
+  if(!T[lg]||lg===state.ui) return;
+  // keep the reader at the same spot when switching
+  const anchor=[...document.querySelectorAll(".cl,#overview,#part2")].find(el=>el.getBoundingClientRect().bottom>80);
+  state.ui=lg; save(); renderStatic();
+  if(!$("#s-survey").classList.contains("hidden")){ renderSurvey(); if(anchor&&anchor.id) document.getElementById(anchor.id).scrollIntoView({block:"start"}); }
+}
+document.querySelectorAll("[data-setlang]").forEach(b=>b.onclick=()=>setLang(b.dataset.setlang));
+
+/* ---------- events ---------- */
+document.addEventListener("change",e=>{
+  const x=e.target;
+  if(x.type==="radio"&&/^C\d\d$/.test(x.name)){ state.votes[x.name]=x.value==="NA"?"NA":+x.value; save(); x.closest(".cl").classList.add("voted"); updateProgress(); }
+});
+document.addEventListener("toggle",e=>{ const d=e.target; if(d.classList&&d.classList.contains("lang-group")){ state.open=state.open||{}; state.open[d.dataset.lg]=d.open; save(); } },true);
+document.addEventListener("input",e=>{
+  const x=e.target;
+  if(x.dataset.cm){ state.comments[x.dataset.cm]=x.value; save(); }
+  else if(x.dataset.pair){ const p=state.pairs[x.dataset.pair]=state.pairs[x.dataset.pair]||{}; p[x.dataset.to]=x.value; save();
+    x.closest(".u").classList.toggle("filled",Object.values(p).some(v=>v&&v.trim())); updateProgress(); }
+  else if(x.id==="general"){ state.general=x.value; save(); }
+});
+document.addEventListener("click",e=>{
+  const id=e.target.dataset&&e.target.dataset.clear;
+  if(id){ delete state.votes[id]; save(); document.querySelectorAll(`input[name="${id}"]`).forEach(i=>i.checked=false); $("#"+id).classList.remove("voted"); updateProgress(); }
+});
+function countPairs(){ return Object.values(state.pairs).reduce((a,p)=>a+Object.values(p).filter(x=>x&&x.trim()).length,0); }
+function updateProgress(){
+  const n=DOC().clusters.length, v=Object.keys(state.votes).length;
+  $("#bar").style.width=(v/n*100)+"%"; $("#count").textContent=`${v} / ${n}`;
+  ["fr","en","el"].forEach(lg=>{const c=UNPAIRED.filter(u=>u.lang===lg&&state.pairs[u.id]&&Object.values(state.pairs[u.id]).some(x=>x&&x.trim())).length;
+    const el=document.querySelector(`[data-filled="${lg}"]`); if(el) el.textContent=c;});
+  $("#status").textContent=L().status(v,n,countPairs());
+}
+
+/* ---------- navigation ---------- */
+function show(screen){
+  state.screen=screen; save();
+  $("#s-intro").classList.toggle("hidden",screen!=="intro");
+  $("#s-survey").classList.toggle("hidden",screen!=="survey");
+  $("#s-done").classList.toggle("hidden",screen!=="done");
+  $("#footer").classList.toggle("hidden",screen!=="survey");
+  if(screen==="survey") renderSurvey();
+  window.scrollTo(0,0);
+}
+$("#start").onclick=()=>{
+  const name=$("#name").value.trim();
+  if(!name){ $("#intro-err").textContent=L().nameErr; return; }
+  $("#intro-err").textContent="";
+  state.name=name; if(!state.sid) state.sid=Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+  show("survey");
+};
+$("#back").onclick=()=>{ show("intro"); $("#name").value=state.name; };
+$("#to-spe").onclick=()=>$("#spe-reminder").scrollIntoView({behavior:"smooth",block:"start"});
+$("#to-part2").onclick=()=>$("#part2").scrollIntoView({behavior:"smooth",block:"start"});
+
+/* ---------- submit ---------- */
+function buildPayload(){
+  const fr=DOCS.fr.clusters;   // cluster titles stored in French (stable key across UI languages)
+  const votes=fr.map(c=>{const id="C"+String(c.n).padStart(2,"0");
+    return {cluster_id:id, cluster:c.title, accord:state.votes[id]??"", comment:(state.comments[id]||"").trim()};});
+  const pairs=[];
+  UNPAIRED.forEach(u=>{const p=state.pairs[u.id]||{};
+    Object.entries(p).forEach(([to,val])=>{ if(val&&val.trim()) pairs.push({item_id:u.id, source_lang:LANG_EN[u.lang], expression:u.expr, target_lang:LANG_EN[to], equivalent:val.trim()}); });});
+  return {survey:"equivalences", ui_lang:state.ui, submission_id:state.sid, name:state.name, submitted_at:new Date().toISOString(),
+          votes, pairs, general_comment:(state.general||"").trim()};
+}
+function downloadCSV(){
+  const P=buildPayload(), q=v=>`"${String(v??"").replace(/"/g,'""')}"`;
+  const lines=[["section","name","id","item","accord_or_target_lang","comment_or_equivalent"].join(",")];
+  P.votes.forEach(v=>lines.push(["vote",P.name,v.cluster_id,v.cluster,v.accord,v.comment].map(q).join(",")));
+  P.pairs.forEach(p=>lines.push(["pair",P.name,p.item_id,p.expression,p.target_lang,p.equivalent].map(q).join(",")));
+  if(P.general_comment) lines.push(["general",P.name,"","","",P.general_comment].map(q).join(","));
+  const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob(["﻿"+lines.join("\n")],{type:"text/csv;charset=utf-8"}));
+  a.download=`POLAR_equivalences_${P.name.replace(/\s+/g,"_")}.csv`; a.click();
+}
+$("#dl-backup").onclick=downloadCSV;
+$("#submit").onclick=async()=>{
+  const payload=JSON.stringify(buildPayload());
+  $("#submit").disabled=true;
+  const t0=Date.now(), upd=()=>{$("#status").textContent=L().sending(Math.round((Date.now()-t0)/1000));}; upd(); const tick=setInterval(upd,1000);
+  let ok=false, err="";
+  try{
+    const ctrl=new AbortController(), to=setTimeout(()=>ctrl.abort(),45000); let j;
+    try{ const r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:payload,signal:ctrl.signal}); j=await r.json(); }
+    finally{ clearTimeout(to); }
+    ok=!!(j&&j.ok); if(!ok) err=(j&&j.error)||"unknown";
+  }catch(e){ ok=false; err=(e&&e.name==="AbortError")?"timeout":((e&&e.message)||String(e)); }
+  finally{ clearInterval(tick); $("#submit").disabled=false; }
+  if(ok){ show("done"); try{localStorage.removeItem(STORE);}catch(e){} }
+  else{ $("#status").textContent=L().fail(err); downloadCSV(); }
+};
+
+/* ---------- init ---------- */
+load();
+if(!T[state.ui]) state.ui=((navigator.language||"").toLowerCase().startsWith("fr"))?"fr":"en";
+renderStatic(); $("#name").value=state.name;
+if(state.screen==="survey"&&state.name) show("survey");
+</script>
+</body>
+</html>
