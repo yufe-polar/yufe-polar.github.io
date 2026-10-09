@@ -5,6 +5,7 @@ theme = "PaperMod"
 
 
 [params]
+  description = "POLAR (Polemics in Online Language and Automated Recognition) is a 24-month YUFE-funded research project investigating how online speakers express stance and controversy, and how such strategies can be identified qualitatively and detected automatically."
   defaultTheme = "auto"
   ShowReadingTime = false
   ShowShareButtons = false
