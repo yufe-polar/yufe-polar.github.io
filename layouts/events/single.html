@@ -17,7 +17,7 @@
       </span>
       <span class="hero-pill">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        {{ .Date.Format "15:04" }}{{ with .Params.end }} – {{ (time .).Format "15:04" }}{{ end }} CET
+        {{ .Date.Format "15:04" }}{{ with .Params.end }} – {{ (time .).Format "15:04" }}{{ end }} CET{{ with .Params.tz_alt }} · {{ . }}{{ end }}
       </span>
       {{ with .Params.meet_link }}
       <a class="hero-pill hero-pill-join" href="{{ . }}" target="_blank" rel="noopener noreferrer">
