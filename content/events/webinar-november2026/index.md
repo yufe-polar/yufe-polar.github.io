@@ -15,7 +15,7 @@ summary: |
   **Reinhild Vandekerckhove** (University of Antwerp) — *"OMG! Why Discourse Markers Thrive in Interactive Social Media Writing"*
 hideMeta: true
 cover:
-  image: "polar-webinar2-simple.png"
+  image: "polar-webinar2-preview.png"
   alt: "POLAR Webinar №2 — Language in Digital Spaces: From Connection to Polarization"
   relative: true
 ---
