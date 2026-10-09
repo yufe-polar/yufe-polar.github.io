@@ -157,10 +157,11 @@ html[data-theme="dark"] .event-body-inner p,
 }
 
 .speaker-photocredit {
-  font-size: .5rem;
-  color: rgba(255,255,255,.2);
-  margin: .3rem 0 .85rem;
-  letter-spacing: .02em;
+  font-size: .58rem !important;
+  color: rgba(255,255,255,.28) !important;
+  margin: .3rem 0 .75rem !important;
+  letter-spacing: .04em;
+  font-style: italic;
 }
 
 .speaker-name {
