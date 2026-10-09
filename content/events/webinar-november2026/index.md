@@ -2,6 +2,7 @@
 title: "Language in Digital Spaces: From Connection to Polarization"
 date: 2026-11-25T14:00:00+01:00
 end:  2026-11-25T16:00:00+01:00
+tz_alt: "15:00–17:00 EET"
 draft: false
 event_type: "Seminar"
 location: "Online (Webinar)"
@@ -21,7 +22,7 @@ cover:
 
 <p class="event-section-label">Programme</p>
 
-{{< presentation name="Tuija Saresma" affil="Professor, Cultural Studies · University of Eastern Finland" time="14:00 – 15:00 CET" photo="tuija-saresma.jpg" >}}
+{{< presentation name="Tuija Saresma" affil="Professor, Cultural Studies · University of Eastern Finland" time="14:00 – 15:00 CET" photo="tuija-saresma.jpg" photocredit="Niko Jouhkimainen" >}}
 
 Hate Speech and Polarization as a Threat to Academic Freedom
 
