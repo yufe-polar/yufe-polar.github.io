@@ -98,3 +98,27 @@ groups:
           - Argumentation
           - Critical Discourse Analysis
           - Emotions in polarized discourse
+          - Corpus Linguistics
+
+      - name: Maria Constantinou-Papanicolaou
+        photo: maria.jpg
+        initials: MC
+        role: Researcher
+        institution: University of Cyprus
+        tags:
+          - Critical Discourse Analysis
+          - Social Semiotics
+          - Translation Studies
+
+      - name: Niki Syngelaki
+        photo: niki.jpg
+        initials: NS
+        role: Researcher
+        institution: University of Cyprus
+        tags:
+          - Online Discourse Analysis
+          - Gender and LGBTQIA+
+          - Discourses of Marginalization
+        links:
+          - type: linkedin
+            url: https://www.linkedin.com/in/niki-syngelaki-08a3292b7/
