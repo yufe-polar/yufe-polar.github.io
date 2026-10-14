@@ -6,6 +6,7 @@ tz_alt: "15:00–17:00 EET"
 draft: false
 event_type: "Seminar"
 location: "Online (Webinar)"
+meet_link: "https://meet.google.com/bpb-owyk-ntb"
 series_label: "POLAR Webinar · №2"
 series_sub: "2nd POLAR Online Webinar — Seminar Series"
 list_title: "POLAR Seminar №2 : Language in Digital Spaces"
