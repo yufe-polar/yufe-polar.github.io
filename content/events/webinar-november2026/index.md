@@ -11,7 +11,7 @@ series_label: "POLAR Webinar · №2"
 series_sub: "2nd POLAR Online Webinar — Seminar Series"
 list_title: "POLAR Seminar №2 : Language in Digital Spaces"
 summary: |
-  **Tuija Saresma** (University of Eastern Finland) — *"Hate Speech and Polarization as a Threat to Academic Freedom"*
+  **Daciana Vlad** (University of Oradea) — *"On Some Constructional Phrasemes Marking Polemical Discursive Regime in French and Romanian"*
 
   **Reinhild Vandekerckhove** (University of Antwerp) — *"OMG! Why Discourse Markers Thrive in Interactive Social Media Writing"*
 hideMeta: true
@@ -23,11 +23,11 @@ cover:
 
 <p class="event-section-label">Programme</p>
 
-{{< presentation name="Tuija Saresma" affil="Professor, Cultural Studies · University of Eastern Finland" time="14:00 – 15:00 CET" photo="tuija-saresma.jpg" photocredit="Niko Jouhkimainen" >}}
+{{< presentation name="Daciana Vlad" affil="Associate Professor, Dept. of French Language & Literature · University of Oradea" time="14:00 – 15:00 CET" photo="daciana-vlad.jpg" >}}
 
-Hate Speech and Polarization as a Threat to Academic Freedom
+On Some Constructional Phrasemes Marking Polemical Discursive Regime in French and Romanian
 
-Hate speech and increasing societal polarization pose growing challenges to academic freedom. This presentation examines how online harassment and attacks against researchers affect academic work, public engagement, and the communication of research findings. Drawing on recent research, the talk explores the consequences of these developments for scholars, universities, and democratic public debate.
+We will describe the two manifestations of the polemical phenomenon: the discursive regime (*Fr.* "le polémique"), a transgeneric discursive phenomenon that emerges in monologal discourse across various discursive genres, and the interactional regime (*Fr.* "la polémique"), a dialogal manifestation of the polemical phenomenon which represents one specific form of conflictual interaction, amongst others. To illustrate the marking of the polemical discursive regime, will be presented some constructional phrasemes in French and Romanian of the type: *Fr.* Tu plaisantes / rigoles…?; Qu'est-ce que tu (me) racontes / chantes (là)?!; Cesse ton baratin / ton charabia…; *Rom.* Îți arde de glume / ironii?... 'Is this some kind of joke / irony?'; Ce tot îndrugi / vorbești...? 'What are you talking / blabbering about?'; Lasă vorbăria / poveștile 'Cut the chatter / crap'. We will demonstrate that they combine lexico-syntactic patterns, of varying degrees of productivity, with a specific discursive function, namely the expression of disagreement in interaction. Drawing on comparable corpora from the TenTen family, available on Sketch Engine, we aim to propose a model of these polemical constructional phrasemes taking into account different levels of analysis: syntactic, semantic, pragmatic and interactional. The productivity of these constructions will be also examined. The contrastive component of this research aims to identify conventionalised phraseological invariants of polemics, as well as divergences in the lexicalisation of polemical discursive moves in the two languages under consideration.
 
 {{< /presentation >}}
 
